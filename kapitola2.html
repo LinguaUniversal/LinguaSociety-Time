@@ -82,6 +82,14 @@ p strong{color:var(--ink)}
 .tl-item .ms{font-size:14.5px;color:var(--ink-soft)}
 .tl-item .ms b{color:var(--c1)}
 
+/* osa letopočtu */
+.axis{display:flex;align-items:stretch;margin:18px 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.03em;text-align:center}
+.axis span{padding:12px 8px;flex:1;display:flex;align-items:center;justify-content:center}
+.axis .ax-old{background:#f0e6df;color:var(--c1)}
+.axis .ax-zero{background:var(--c1);color:#fff;flex:1.2}
+.axis .ax-new{background:#fff4e6;color:#c47b12}
+@media(max-width:520px){.axis{font-size:11.5px}}
+
 /* PŘEMOSTĚNÍ */
 .bridge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .bridge{display:block;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;color:var(--ink);transition:.18s}
@@ -117,6 +125,17 @@ p strong{color:var(--ink)}
 .binbtns button.sel{background:var(--c1);color:#fff;border-color:var(--c1)}
 .sort-item.correct{border-color:#46b06a;background:#e8f7ed}
 .sort-item.wrong{border-color:#e06464;background:#fdecec}
+
+/* řazení (order) */
+.order-list{display:flex;flex-direction:column;gap:8px}
+.order-item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:10px 14px}
+.order-item .olabel{font-size:16px;display:flex;align-items:center;gap:10px}
+.order-item .onum{font-family:var(--disp);font-weight:800;color:var(--c1);font-size:18px;min-width:22px}
+.order-ctrls{display:flex;gap:6px}
+.order-ctrls button{font-family:var(--disp);font-weight:700;font-size:15px;line-height:1;border:1.5px solid var(--line);background:#fff;border-radius:8px;width:34px;height:34px;cursor:pointer;color:var(--ink-soft);transition:.14s}
+.order-ctrls button:hover{border-color:var(--c1);color:var(--c1)}
+.order-item.correct{border-color:#46b06a;background:#e8f7ed}
+.order-item.wrong{border-color:#e06464;background:#fdecec}
 
 /* spojování (match) */
 .match-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -263,6 +282,36 @@ footer a{color:var(--amber);text-decoration:none}
     <p style="margin:0">Vynález <strong>písma</strong> je hranice mezi pravěkem a starověkem. Od chvíle, kdy lidé začali zapisovat, se nám zachovaly písemné prameny — a dějiny se najednou dají číst, ne jen vykopávat.</p>
   </div>
 
+  <h3>Jak počítáme roky</h3>
+  <p>Aby se historici v čase vyznali, počítají roky od jednoho pevného okamžiku — od <strong>začátku našeho letopočtu</strong>. Roky <em>po něm</em> značíme zkratkou <strong>n. l.</strong> (našeho letopočtu), roky <em>před ním</em> zkratkou <strong>př. n. l.</strong> (před naším letopočtem).</p>
+  <p>Důležitý chyták: roky <strong>před naším letopočtem se počítají pozpátku</strong>. Čím dál do minulosti jdeme, tím <strong>vyšší</strong> je číslo — rok 500 př. n. l. je starší než rok 100 př. n. l.</p>
+  <div class="axis">
+    <span class="ax-old">starší ◀ př. n. l.</span>
+    <span class="ax-zero">začátek letopočtu</span>
+    <span class="ax-new">n. l. ▶ novější</span>
+  </div>
+  <div class="callout">
+    <div class="label">Zajímavost</div>
+    <p style="margin:0">Ne každý počítá roky stejně. Jiné kultury si začátek letopočtu zvolily u jiné události, takže „letošní rok" by podle nich měl úplně jiné číslo.</p>
+  </div>
+
+  <h3>Do kterého století rok patří</h3>
+  <p>Století je <strong>sto let</strong>. Ale pozor, jak se počítají: <strong>1. století</strong> jsou roky <strong>1 až 100</strong>, <strong>2. století</strong> roky 101 až 200, a tak dál. Právě tady děláme nejčastější chybu.</p>
+  <div class="callout">
+    <div class="label">Pomůcka, jak století poznat (roky n. l.)</div>
+    <p style="margin:0 0 8px">Vezmi rok <strong>bez posledního dvojčíslí</strong> a <strong>přičti 1</strong>. Když rok končí na <strong>00</strong>, nepřičítáš nic.</p>
+    <p style="margin:0 0 4px">453 → „4" + 1 = <strong>5. století</strong></p>
+    <p style="margin:0 0 4px">1040 → „10" + 1 = <strong>11. století</strong></p>
+    <p style="margin:0 0 4px">2023 → „20" + 1 = <strong>21. století</strong></p>
+    <p style="margin:0">2000 → končí na 00, nepřičítáš → <strong>20. století</strong></p>
+  </div>
+  <div class="callout">
+    <div class="label">Nejčastější chyba</div>
+    <p style="margin:0 0 6px">Rok <strong>453</strong> není ve 4. století, ale už v <strong>5.</strong> — patří mezi roky 401–500.</p>
+    <p style="margin:0">Rok <strong>2000</strong> je ještě <strong>20. století</strong>. Teprve rok <strong>2001</strong> začal 21. století.</p>
+  </div>
+  <p>U roků <strong>př. n. l.</strong> platí stejné počítání, jen pozpátku. Třeba rok <strong>1322 př. n. l.</strong> patří do <strong>14. století př. n. l.</strong> (roky 1400–1301 př. n. l.).</p>
+
   <h3>Jak poznám, čemu věřit</h3>
   <p>Ne každá stopa je spolehlivá. Než nějaké informaci uvěříš — ať je z učebnice, z internetu nebo z videa — zeptej se sám sebe na tři věci:</p>
   <p><strong>Kdo to vytvořil?</strong> Odborník, nebo někdo neznámý? &nbsp;<strong>Kdy a proč?</strong> Vznikl pramen tehdy, nebo až dlouho potom — a nechtěl někoho přesvědčit? &nbsp;<strong>Dá se to ověřit?</strong> Říkají totéž i jiné, nezávislé zdroje?</p>
@@ -356,16 +405,68 @@ footer a{color:var(--amber);text-decoration:none}
       <div class="fb"></div>
     </div>
 
-    <!-- Q6 doplňovačka milník písmo -->
-    <div class="q" data-type="fill" data-answers="písmo|pismo|písma|pisma|písmu|pismu">
-      <div class="qhead"><span class="qnum">6.</span> Doplň: Hranici mezi pravěkem a starověkem tvoří vynález ______.</div>
-      <div class="fillrow"><input type="text" placeholder="napiš slovo…"></div>
+    <!-- Q6 seřazení epoch -->
+    <div class="q" data-type="order" data-order="a,b,c,d,e">
+      <div class="qhead"><span class="qnum">6.</span> Seřaď epochy od nejstarší po nejnovější (šipkami posouvej nahoru a dolů).</div>
+      <div class="order-list">
+        <div class="order-item" data-id="c"><span class="olabel"><span class="onum"></span>Středověk</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="a"><span class="olabel"><span class="onum"></span>Pravěk</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="e"><span class="olabel"><span class="onum"></span>Dnešní doba</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="b"><span class="olabel"><span class="onum"></span>Starověk</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="d"><span class="olabel"><span class="onum"></span>Novověk</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+      </div>
       <div class="fb"></div>
     </div>
 
-    <!-- Q7 doplňovačka pramen -->
+    <!-- Q7 století — rok 2000 -->
+    <div class="q" data-type="choice" data-correct="1"
+         data-explain="Rok 2000 je posledním rokem 20. století (roky 1901–2000). Teprve rok 2001 začal 21. století. Roky končící na 00 patří k nižšímu století.">
+      <div class="qhead"><span class="qnum">7.</span> Do kterého století patří rok <strong>2000 n. l.</strong>?</div>
+      <div class="opts">
+        <button class="opt">19. století</button>
+        <button class="opt">20. století</button>
+        <button class="opt">21. století</button>
+        <button class="opt">22. století</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q8 spoj rok ↔ století -->
+    <div class="q" data-type="match">
+      <div class="qhead"><span class="qnum">8.</span> Spoj rok se správným stoletím — klikni vlevo, pak vpravo.</div>
+      <div class="match-grid">
+        <div class="match-col" data-side="L">
+          <button class="mitem" data-id="a">453 n. l.</button>
+          <button class="mitem" data-id="b">2000 n. l.</button>
+          <button class="mitem" data-id="c">2023 n. l.</button>
+          <button class="mitem" data-id="d">1322 př. n. l.</button>
+        </div>
+        <div class="match-col" data-side="R">
+          <button class="mitem" data-id="c">21. století</button>
+          <button class="mitem" data-id="a">5. století</button>
+          <button class="mitem" data-id="d">14. století př. n. l.</button>
+          <button class="mitem" data-id="b">20. století</button>
+        </div>
+      </div>
+      <div class="match-hint">Tip: omyl opravíš tlačítkem „Vymazat spojení".</div>
+      <button class="btn" style="background:#eee;color:var(--ink-soft);margin-top:10px;font-size:14px;padding:7px 14px" onclick="resetMatch(this)">Vymazat spojení</button>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q9 přiřazení definic -->
+    <div class="q" data-type="sort">
+      <div class="qhead"><span class="qnum">9.</span> Přiřaď definici ke správnému pojmu.</div>
+      <div class="sort-list">
+        <div class="sort-item" data-bin="0"><span>Všechno, co se kdy stalo až do dneška</span><div class="binbtns"><button data-b="0">Minulost</button><button data-b="1">Historie</button><button data-b="2">Dějepis</button></div></div>
+        <div class="sort-item" data-bin="1"><span>Věda, která popisuje vývoj lidské společnosti</span><div class="binbtns"><button data-b="0">Minulost</button><button data-b="1">Historie</button><button data-b="2">Dějepis</button></div></div>
+        <div class="sort-item" data-bin="2"><span>Školní předmět, ve kterém se o minulosti učíš</span><div class="binbtns"><button data-b="0">Minulost</button><button data-b="1">Historie</button><button data-b="2">Dějepis</button></div></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q10 doplňovačka pramen -->
     <div class="q" data-type="fill" data-answers="pramen|prameny|pramenem">
-      <div class="qhead"><span class="qnum">7.</span> Doplň: Stopa po minulosti, ze které se dozvídáme o dějinách, se nazývá historický ______.</div>
+      <div class="qhead"><span class="qnum">10.</span> Doplň: Stopa po minulosti, ze které se dozvídáme o dějinách, se nazývá historický ______.</div>
       <div class="fillrow"><input type="text" placeholder="napiš slovo…"></div>
       <div class="fb"></div>
     </div>
@@ -449,6 +550,27 @@ document.querySelectorAll('.q[data-type="sort"] .sort-item').forEach(item=>{
   });
 });
 
+/* ---- řazení (order) ---- */
+function updateOrderNums(list){
+  [...list.children].forEach((it,i)=>{ const n=it.querySelector('.onum'); if(n) n.textContent=(i+1)+'.'; });
+}
+document.querySelectorAll('.q[data-type="order"]').forEach(q=>{
+  const list=q.querySelector('.order-list');
+  updateOrderNums(list);
+  list.querySelectorAll('.order-item').forEach(item=>{
+    item.querySelector('.up').addEventListener('click',()=>{
+      const prev=item.previousElementSibling;
+      if(prev) list.insertBefore(item,prev);
+      updateOrderNums(list);
+    });
+    item.querySelector('.down').addEventListener('click',()=>{
+      const next=item.nextElementSibling;
+      if(next) list.insertBefore(next,item);
+      updateOrderNums(list);
+    });
+  });
+});
+
 /* ---- spojování (match) ---- */
 const MBADGES=['①','②','③','④','⑤','⑥'];
 document.querySelectorAll('.q[data-type="match"]').forEach(q=>{
@@ -515,6 +637,20 @@ document.getElementById('checkBtn').addEventListener('click',()=>{
       });
       fb.className='fb show '+(allOk?'ok':'no');
       fb.textContent = allOk ? "Všechno správně zařazené! 👍" : "Některé prameny nesedí — zkontroluj červené.";
+      if(allOk) correct++;
+
+    } else if(type==="order"){
+      const correctOrder = q.dataset.order.split(',');
+      const items = [...q.querySelectorAll('.order-item')];
+      let allOk = true;
+      items.forEach((it,i)=>{
+        const ok = it.dataset.id === correctOrder[i];
+        it.classList.remove('correct','wrong');
+        it.classList.add(ok?'correct':'wrong');
+        if(!ok) allOk=false;
+      });
+      fb.className='fb show '+(allOk?'ok':'no');
+      fb.textContent = allOk ? "Správné pořadí! 👍" : "Pořadí ještě nesedí — zkontroluj červené.";
       if(allOk) correct++;
 
     } else if(type==="match"){
