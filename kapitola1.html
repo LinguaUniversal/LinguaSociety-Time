@@ -146,6 +146,33 @@ p strong{color:var(--ink)}
   .rules-table tr{border-top:1px solid var(--line);padding:8px 0}
   .rules-table td:first-child{font-weight:700;color:var(--ink);padding-top:10px}}
 
+/* trojstupeň závaznosti */
+.levels{display:flex;flex-direction:column;gap:10px;margin:18px 0}
+.level{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 16px;border-left:6px solid var(--c1)}
+.level .lv-rank{font-family:var(--disp);font-weight:800;font-size:26px;color:var(--c1);min-width:24px;text-align:center}
+.level .lv-body h4{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:19px;margin-bottom:2px}
+.level .lv-body p{font-size:14.5px;margin:0;color:var(--ink-soft)}
+.level.weak{border-left-color:#9aa6c7}
+.level.mid{border-left-color:var(--amber)}
+.level.strong{border-left-color:#c0392b}
+
+/* pyramida nadřazenosti */
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:6px;margin:18px 0}
+.pyr{border-radius:10px;color:#fff;text-align:center;padding:12px 10px;font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.02em;max-width:100%}
+.pyr small{display:block;font-family:var(--body);font-weight:400;text-transform:none;font-size:12.5px;opacity:.93;letter-spacing:0;margin-top:2px}
+.pyr.t1{width:60%;background:var(--c1);font-size:18px}
+.pyr.t2{width:80%;background:#7a86bf;font-size:17px}
+.pyr.t3{width:96%;background:#aab2cf;font-size:15px}
+@media(max-width:520px){.pyr.t1,.pyr.t2,.pyr.t3{width:100%}}
+
+/* karty institucí / mocí */
+.gov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:18px 0}
+.gov-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;border-top:5px solid var(--c1)}
+.gov-card .ico{font-size:28px;line-height:1;margin-bottom:8px}
+.gov-card h4{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:20px;margin-bottom:5px}
+.gov-card p{font-size:14.5px;margin:0;color:var(--ink-soft)}
+.gov-card .who2{font-size:13.5px;color:var(--c1);font-weight:700;margin-top:8px}
+
 /* ---------- PŘEMOSTĚNÍ ---------- */
 .bridge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .bridge{
@@ -283,6 +310,9 @@ footer a{color:var(--amber);text-decoration:none}
     <div class="kw"><div class="cz">Zástupce</div><div class="en">representative</div><div class="def">Člověk zvolený, aby rozhodoval za ostatní.</div></div>
     <div class="kw"><div class="cz">Většina</div><div class="en">majority</div><div class="def">Více než polovina hlasů — rozhoduje o výsledku.</div></div>
     <div class="kw"><div class="cz">Demokracie</div><div class="en">democracy</div><div class="def">Vláda, kde o věcech rozhodují občané — přímo nebo přes své zástupce.</div></div>
+    <div class="kw"><div class="cz">Ústava</div><div class="en">constitution</div><div class="def">Nejvyšší zákon státu — všechny ostatní zákony se mu musí přizpůsobit.</div></div>
+    <div class="kw"><div class="cz">Parlament</div><div class="en">parliament</div><div class="def">Sbor volených zástupců, který schvaluje zákony.</div></div>
+    <div class="kw"><div class="cz">Vláda</div><div class="en">government</div><div class="def">Premiér a ministři, kteří řídí stát ze dne na den.</div></div>
   </div>
 </section>
 
@@ -294,28 +324,26 @@ footer a{color:var(--amber);text-decoration:none}
   <h3>Pravidla jsou všude</h3>
   <p>Hned ráno se řídíš pravidly, i když o nich nepřemýšlíš. Doma máš dohodnuto, kdo vynáší koš. Ve škole zvoní na začátek hodiny. Na přechodu čekáš na zelenou. <strong>Pravidlo</strong> je dohoda o tom, jak se chovat, aby skupina lidí mohla žít a pracovat pohromadě.</p>
   <p>Kdyby pravidla neexistovala, bylo by ráno chaotické: nikdo by nevěděl, kdy hodina začíná, a na přechodu by si nikdo nebyl jistý, jestli auto zastaví. Pravidla nejsou hlavně o zákazech — jsou hlavně o tom, abychom se na sebe mohli <strong>spolehnout</strong>.</p>
+  <p>Pravidla mají různou podobu. Některá jsou <strong>nepsaná</strong> — nikde nestojí, a přesto je dodržujeme: pozdravit, neskákat druhému do řeči, chovat se slušně u stolu. Říká se jim <strong>společenské normy</strong> nebo zvyklosti. Jiná jsou <strong>psaná a formální</strong> — třeba řád ve škole nebo zákony státu. Platí pravidlo: čím je něco důležitější, tím spíš bývá zapsané, aby bylo jasné a platilo pro všechny stejně.</p>
 
-  <h3>Kdy se z pravidla stane zákon</h3>
-  <p>Některá pravidla platí jen v jedné skupině — třída si může dohodnout, že o přestávce nebude pouštět hudbu nahlas. Jiná pravidla ale musí platit pro <strong>všechny ve státě</strong> stejně: že se nekrade, že auto zastaví na červené, že děti chodí do školy. Takovým pravidlům říkáme <strong>zákony</strong>.</p>
-  <div class="compare">
-    <div>
-      <h4>Pravidlo</h4>
-      <ul>
-        <li>Platí v jedné skupině</li>
-        <li>Domluví si ho lidé mezi sebou</li>
-        <li>Při porušení napomenutí, ztráta důvěry</li>
-        <li>Lze rychle změnit dohodou</li>
-      </ul>
-    </div>
-    <div>
-      <h4>Zákon</h4>
-      <ul>
-        <li>Platí pro celý stát</li>
-        <li>Schvalují ho volení zástupci</li>
-        <li>Při porušení následuje trest podle práva</li>
-        <li>Mění se složitějším postupem</li>
-      </ul>
-    </div>
+  <h3>Tři stupně: dohoda → vnitřní předpis → zákon</h3>
+  <p>Ne každé pravidlo váží stejně. Můžeme je seřadit od nejvolnějšího po nejzávaznější:</p>
+  <div class="levels">
+    <div class="level weak"><div class="lv-rank">1</div><div class="lv-body"><h4>Dohoda / pravidlo</h4><p>Domluva v jedné skupině — třída, kroužek, rodina. Může být i jen ústní. Při porušení napomenutí nebo ztráta důvěry.</p></div></div>
+    <div class="level mid"><div class="lv-rank">2</div><div class="lv-body"><h4>Vnitřní předpis</h4><p>Psané pravidlo jedné organizace — třeba <strong>školní řád</strong>. Je víc než pouhá dohoda, ale míň než zákon. Platí pro všechny v dané škole.</p></div></div>
+    <div class="level strong"><div class="lv-rank">3</div><div class="lv-body"><h4>Zákon</h4><p>Platí pro <strong>celý stát</strong>. Schvalují ho volení zástupci. Při porušení následuje trest podle práva.</p></div></div>
+  </div>
+
+  <h3>Která pravidla jsou nadřazená</h3>
+  <p>Pravidla jsou uspořádaná jako pyramida: co je výš, tomu se to nižší musí přizpůsobit. Nic nesmí být v rozporu s tím, co je nad ním.</p>
+  <div class="pyramid">
+    <div class="pyr t1">Ústava + Listina<small>nejvyšší zákon státu</small></div>
+    <div class="pyr t2">Zákony<small>schvaluje Parlament</small></div>
+    <div class="pyr t3">Vyhlášky a vnitřní předpisy<small>např. obecní vyhláška, školní řád</small></div>
+  </div>
+  <div class="callout">
+    <div class="label">Příklad</div>
+    <p style="margin:0">Školní řád nesmí říkat nic, co by odporovalo zákonu — a zákon zase nesmí odporovat Ústavě. Proto je Ústava ten nejdůležitější dokument ve státě.</p>
   </div>
 
   <h3>Co se stane, když pravidlo porušíš</h3>
@@ -356,6 +384,63 @@ footer a{color:var(--amber);text-decoration:none}
   <div class="callout">
     <div class="label">Proč tajně?</div>
     <p style="margin:0">Tajná volba chrání voliče. Když nikdo neví, koho jsi volil, nikdo tě nemůže za tvou volbu odměnit ani potrestat. Můžeš se tak rozhodovat svobodně.</p>
+  </div>
+
+  <h3>Jak se řídí stát: tři moci</h3>
+  <p>Aby žádný člověk neměl ve státě moc úplně nad vším, je moc rozdělená na <strong>tři části</strong>, které se navzájem hlídají. Je to podobné, jako kdyby ve škole jeden vymýšlel pravidla, druhý je uváděl do praxe a třetí řešil spory.</p>
+  <div class="gov-grid">
+    <div class="gov-card">
+      <div class="ico">📜</div>
+      <h4>Zákonodárná</h4>
+      <p>Tvoří a schvaluje zákony.</p>
+      <div class="who2">Parlament: Poslanecká sněmovna a Senát</div>
+    </div>
+    <div class="gov-card">
+      <div class="ico">🏛️</div>
+      <h4>Výkonná</h4>
+      <p>Řídí stát a uvádí zákony do praxe.</p>
+      <div class="who2">Vláda (premiér + ministři) a prezident</div>
+    </div>
+    <div class="gov-card">
+      <div class="ico">⚖️</div>
+      <h4>Soudní</h4>
+      <p>Rozhoduje spory a trestá porušení zákonů.</p>
+      <div class="who2">Soudy</div>
+    </div>
+  </div>
+
+  <h3>Kdo je kdo ve státě</h3>
+  <p>Pojďme si tři nejdůležitější instituce přiblížit:</p>
+  <div class="gov-grid">
+    <div class="gov-card">
+      <div class="ico">🗳️</div>
+      <h4>Parlament</h4>
+      <p>Schvaluje zákony. Má dvě komory: <strong>Poslaneckou sněmovnu</strong> (200 poslanců, volíme je na 4 roky) a <strong>Senát</strong> (81 senátorů na 6 let).</p>
+    </div>
+    <div class="gov-card">
+      <div class="ico">👥</div>
+      <h4>Vláda</h4>
+      <p>Řídí stát ze dne na den. V čele je <strong>předseda vlády (premiér)</strong> a jednotliví <strong>ministři</strong> (školství, financí…).</p>
+    </div>
+    <div class="gov-card">
+      <div class="ico">🎖️</div>
+      <h4>Prezident</h4>
+      <p>Hlava státu. V Česku ho volí přímo občané na <strong>5 let</strong>. Zastupuje stát navenek a má i některé pravomoci doma.</p>
+    </div>
+  </div>
+
+  <h3>Jaké máme volby</h3>
+  <p>Občané v Česku nevolí jen jednou. Podle toho, koho zrovna vybíráme, máme několik druhů voleb:</p>
+  <div class="gov-grid">
+    <div class="gov-card"><h4>Sněmovní</h4><p>Volíme poslance do Poslanecké sněmovny.</p></div>
+    <div class="gov-card"><h4>Senátní</h4><p>Volíme senátory do Senátu.</p></div>
+    <div class="gov-card"><h4>Prezidentské</h4><p>Volíme hlavu státu — prezidenta.</p></div>
+    <div class="gov-card"><h4>Krajské</h4><p>Volíme zastupitele svého kraje (regionální volby).</p></div>
+    <div class="gov-card"><h4>Obecní</h4><p>Volíme zastupitele obce — třeba u nás v Litoměřicích.</p></div>
+  </div>
+  <div class="callout">
+    <div class="label">Spoj si to se školou</div>
+    <p style="margin:0">Volby do školního parlamentu jsou jako obecní volby v malém: vybíráš zástupce pro místo, kde to nejlíp znáš — pro svou třídu a školu.</p>
   </div>
 </section>
 
@@ -473,16 +558,62 @@ footer a{color:var(--amber);text-decoration:none}
       <div class="fb"></div>
     </div>
 
-    <!-- Q6 doplňovačka zástupce -->
+    <!-- Q6 spoj moc ↔ instituce -->
+    <div class="q" data-type="match">
+      <div class="qhead"><span class="qnum">6.</span> Spoj druh moci s institucí, která ji vykonává.</div>
+      <div class="match-grid">
+        <div class="match-col" data-side="L">
+          <button class="mitem" data-id="a">zákonodárná</button>
+          <button class="mitem" data-id="b">výkonná</button>
+          <button class="mitem" data-id="c">soudní</button>
+        </div>
+        <div class="match-col" data-side="R">
+          <button class="mitem" data-id="b">vláda</button>
+          <button class="mitem" data-id="c">soudy</button>
+          <button class="mitem" data-id="a">Parlament</button>
+        </div>
+      </div>
+      <div class="match-hint">Tip: omyl opravíš tlačítkem „Vymazat spojení".</div>
+      <button class="btn" style="background:#eee;color:var(--ink-soft);margin-top:10px;font-size:14px;padding:7px 14px" onclick="resetMatch(this)">Vymazat spojení</button>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q7 nadřazenost -->
+    <div class="q" data-type="choice" data-correct="0"
+         data-explain="Ústava je nejvyšší zákon státu. Všechny ostatní zákony i předpisy se jí musí přizpůsobit a nesmí jí odporovat.">
+      <div class="qhead"><span class="qnum">7.</span> Který dokument je nadřazený všem ostatním?</div>
+      <div class="opts">
+        <button class="opt">Ústava</button>
+        <button class="opt">Školní řád</button>
+        <button class="opt">Obecní vyhláška</button>
+        <button class="opt">Domácí dohoda</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q8 vnitřní předpis -->
+    <div class="q" data-type="choice" data-correct="2"
+         data-explain="Školní řád je vnitřní předpis — psané pravidlo jedné organizace. Je víc než pouhá dohoda, ale míň než zákon, který platí pro celý stát.">
+      <div class="qhead"><span class="qnum">8.</span> Čím je <strong>školní řád</strong>?</div>
+      <div class="opts">
+        <button class="opt">Zákonem, který platí pro celý stát.</button>
+        <button class="opt">Jen ústní dohodou mezi žáky.</button>
+        <button class="opt">Vnitřním předpisem — víc než dohoda, míň než zákon.</button>
+        <button class="opt">Součástí Ústavy.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q9 doplňovačka zástupce -->
     <div class="q" data-type="fill" data-answers="zástupce|zástupcem|zastupce|zastupcem">
-      <div class="qhead"><span class="qnum">6.</span> Doplň: Třída si volí svého ______, který za ni hlasuje ve školním parlamentu.</div>
+      <div class="qhead"><span class="qnum">9.</span> Doplň: Třída si volí svého ______, který za ni hlasuje ve školním parlamentu.</div>
       <div class="fillrow"><input type="text" placeholder="napiš slovo…"></div>
       <div class="fb"></div>
     </div>
 
-    <!-- Q7 doplňovačka zákon -->
+    <!-- Q10 doplňovačka zákon -->
     <div class="q" data-type="fill" data-answers="zákon|zakon">
-      <div class="qhead"><span class="qnum">7.</span> Doplň: Závazné pravidlo, které platí pro celý stát a schvalují ho volení zástupci, se jmenuje ______.</div>
+      <div class="qhead"><span class="qnum">10.</span> Doplň: Závazné pravidlo, které platí pro celý stát a schvalují ho volení zástupci, se jmenuje ______.</div>
       <div class="fillrow"><input type="text" placeholder="napiš slovo…"></div>
       <div class="fb"></div>
     </div>
