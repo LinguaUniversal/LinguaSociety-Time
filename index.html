@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinguaSociety&amp;Time — Člověk a společnost 6. ročník</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#32a0d2;--amber:#ffaa37;--c1:#5b6cc4;
+  --ink:#1c2230;--ink-soft:#4a5160;--paper:#fbfaf7;--line:#e4e0d6;--white:#fff;
+  --disp:'Barlow Condensed',sans-serif;--body:'Atkinson Hyperlegible',sans-serif;--serif:'Fraunces',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+
+.hero{background:linear-gradient(135deg,var(--teal) 0%,#2580ad 100%);color:#fff;padding:64px 0 70px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.12) 1px,transparent 0);background-size:26px 26px;opacity:.5}
+.hero .wrap{position:relative;z-index:2}
+.kicker{font-family:var(--disp);font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:15px;opacity:.9}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(46px,9vw,80px);line-height:.95;margin:14px 0 12px;text-transform:uppercase;letter-spacing:-.01em}
+.hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,3.4vw,26px);max-width:620px;opacity:.96}
+.amber{color:var(--amber)}
+
+section{padding:50px 0}
+.sec-tag{font-family:var(--disp);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:var(--teal);display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.sec-tag::before{content:"";width:26px;height:3px;background:var(--amber);border-radius:2px}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(28px,5vw,40px);text-transform:uppercase;line-height:1;margin-bottom:22px}
+p.lead{font-size:17px;color:var(--ink-soft);max-width:680px;margin-bottom:8px}
+
+.chapters{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:14px}
+.ch{display:block;text-decoration:none;color:var(--ink);background:var(--white);border:1px solid var(--line);border-radius:16px;padding:20px;position:relative;transition:.18s}
+.ch.live:hover{border-color:var(--c1);transform:translateY(-3px);box-shadow:0 10px 26px rgba(91,108,196,.16)}
+.ch.soon{opacity:.62;cursor:default}
+.ch .num{font-family:var(--disp);font-weight:800;font-size:34px;line-height:1;color:var(--c1)}
+.ch .ttl{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:22px;margin:6px 0 4px}
+.ch .desc{font-size:14px;color:var(--ink-soft)}
+.dot{position:absolute;top:18px;right:18px;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.05em;padding:4px 10px;border-radius:999px}
+.dot.ok{background:#e8f7ed;color:#1d6e3a}
+.dot.wip{background:#f1f0ec;color:#8a8577}
+
+footer{background:var(--ink);color:#cdd2dc;padding:34px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+footer .brand{font-family:var(--disp);font-weight:700;text-transform:uppercase;color:#fff;font-size:18px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Interaktivní učebnice · ZŠ a MŠ Lingua Universal Litoměřice</div>
+    <h1>Lingua<span class="amber">Society</span>&amp;Time</h1>
+    <p class="sub">Člověk a společnost pro 6. ročník — dějiny a občanská nauka propojené v jednom příběhu o tom, jak lidé žijí pohromadě.</p>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="sec-tag">Kapitoly</div>
+  <h2>Obsah učebnice</h2>
+  <p class="lead">Začínáme u sebe — kdo je občan a jak fungují pravidla — a postupně se vracíme do minulosti: do Mezopotámie, Egypta, Řecka a Říma.</p>
+
+  <div class="chapters">
+    <a class="ch live" href="kapitola1.html">
+      <span class="dot ok">Hotovo</span>
+      <div class="num">1</div>
+      <div class="ttl">Já jako občan</div>
+      <div class="desc">Pravidla a zákony · školní řád a sankce · školní parlament · volby</div>
+    </a>
+    <div class="ch soon">
+      <span class="dot wip">Připravujeme</span>
+      <div class="num">2</div>
+      <div class="ttl">Jak poznáváme minulost</div>
+      <div class="desc">Etapy dějin · zdroje a jejich důvěryhodnost · historie ve filmu, komiksu a AI</div>
+    </div>
+    <div class="ch soon">
+      <span class="dot wip">Připravujeme</span>
+      <div class="num">3</div>
+      <div class="ttl">Pravěk — než vzniklo písmo</div>
+      <div class="desc">Neolitická revoluce · kultura · žijící „pravěké" společnosti dnes</div>
+    </div>
+    <div class="ch soon">
+      <span class="dot wip">Připravujeme</span>
+      <div class="num">4</div>
+      <div class="ttl">Mezi řekami: Mezopotámie</div>
+      <div class="desc">Vznik měst a písma · Chammurapiho zákoník → Ústava a Listina</div>
+    </div>
+    <div class="ch soon">
+      <span class="dot wip">Připravujeme</span>
+      <div class="num">5</div>
+      <div class="ttl">Dar Nilu: Egypt</div>
+      <div class="desc">Civilizace a mytologie · postavení ženy → práva žen dnes</div>
+    </div>
+    <div class="ch soon">
+      <span class="dot wip">Připravujeme</span>
+      <div class="num">6</div>
+      <div class="ttl">Polis a občan: Řecko</div>
+      <div class="desc">Athénská demokracie → volby v ČR · vývoj pojmu „občan"</div>
+    </div>
+    <div class="ch soon">
+      <span class="dot wip">Připravujeme</span>
+      <div class="num">7</div>
+      <div class="ttl">Sedm pahorků: Řím</div>
+      <div class="desc">Republika vs. císařství · římské právo jako základ dnešního</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand">LinguaSociety&amp;Time</div>
+      <div>Člověk a společnost · 6. ročník</div>
+    </div>
+    <div>ZŠ a MŠ Lingua Universal Litoměřice · Ing. Blanka Svobodová, MBA</div>
+  </div>
+</footer>
+
+</body>
+</html>
