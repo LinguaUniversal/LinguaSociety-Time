@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 · Já jako občan — LinguaSociety&amp;Time 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#32a0d2;
+  --amber:#ffaa37;
+  --c1:#5b6cc4;            /* akcent kapitoly 1 — občanská modř */
+  --c1-soft:#eef0fb;
+  --ink:#1c2230;
+  --ink-soft:#4a5160;
+  --paper:#fbfaf7;
+  --line:#e4e0d6;
+  --white:#ffffff;
+  --disp:'Barlow Condensed',sans-serif;
+  --body:'Atkinson Hyperlegible',sans-serif;
+  --serif:'Fraunces',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:linear-gradient(135deg,var(--c1) 0%,#3f4ea8 100%);
+  color:var(--white);
+  padding:54px 0 60px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.12) 1px,transparent 0);
+  background-size:26px 26px;opacity:.5;
+}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{
+  font-family:var(--disp);font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;font-size:15px;opacity:.85;
+  display:flex;align-items:center;gap:10px;
+}
+.eyebrow .num{
+  background:var(--amber);color:var(--ink);
+  width:30px;height:30px;border-radius:50%;
+  display:grid;place-items:center;font-size:17px;font-weight:700;letter-spacing:0;
+}
+.hero h1{
+  font-family:var(--disp);font-weight:800;font-size:clamp(40px,8vw,68px);
+  line-height:.98;margin:16px 0 14px;text-transform:uppercase;letter-spacing:-.01em;
+}
+.hero .lede{
+  font-family:var(--serif);font-style:italic;font-size:clamp(19px,3.4vw,25px);
+  max-width:600px;opacity:.95;
+}
+.hero-svg{position:absolute;right:-30px;bottom:-20px;width:240px;opacity:.9;z-index:1}
+@media(max-width:680px){.hero-svg{display:none}}
+
+/* ---------- NAV ---------- */
+nav.toc{
+  position:sticky;top:0;z-index:50;
+  background:rgba(251,250,247,.92);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 22px}
+nav.toc a{
+  font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:.03em;
+  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+  padding:7px 14px;border-radius:999px;white-space:nowrap;transition:.18s;
+}
+nav.toc a:hover{color:var(--c1);background:var(--c1-soft)}
+
+/* ---------- SECTIONS ---------- */
+section{padding:46px 0}
+.sec-tag{
+  font-family:var(--disp);font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  font-size:14px;color:var(--c1);display:flex;align-items:center;gap:9px;margin-bottom:8px;
+}
+.sec-tag::before{content:"";width:26px;height:3px;background:var(--amber);border-radius:2px}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(28px,5vw,40px);
+  text-transform:uppercase;line-height:1;margin-bottom:22px;letter-spacing:-.01em}
+h3{font-family:var(--disp);font-weight:700;font-size:24px;text-transform:uppercase;
+  letter-spacing:.01em;margin:30px 0 10px;color:var(--ink)}
+p{margin-bottom:14px;color:var(--ink-soft);font-size:17px}
+p strong{color:var(--ink)}
+
+/* ---------- KLÍČOVÁ SLOVA ---------- */
+.kw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.kw{
+  background:var(--white);border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px;border-left:5px solid var(--c1);
+}
+.kw .cz{font-family:var(--disp);font-weight:700;font-size:21px;text-transform:uppercase;color:var(--ink)}
+.kw .en{font-style:italic;color:var(--c1);font-size:14px;margin-bottom:6px}
+.kw .def{font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+
+/* ---------- VÝKLAD ---------- */
+.callout{
+  background:var(--c1-soft);border-radius:16px;padding:20px 22px;margin:22px 0;
+  border:1px solid #dfe2f6;
+}
+.callout .label{font-family:var(--disp);font-weight:700;text-transform:uppercase;
+  letter-spacing:.08em;font-size:14px;color:var(--c1);margin-bottom:6px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.compare>div{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px}
+.compare h4{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:19px;margin-bottom:8px}
+.compare ul{list-style:none}
+.compare li{font-size:15px;padding:5px 0 5px 20px;position:relative;color:var(--ink-soft)}
+.compare li::before{content:"›";position:absolute;left:2px;color:var(--c1);font-weight:700}
+@media(max-width:600px){.compare,.callout .compare{grid-template-columns:1fr}}
+
+/* červená nit "občan" */
+.thread{
+  border:2px dashed var(--amber);border-radius:16px;padding:18px 20px;margin:24px 0;
+  background:#fff8ec;
+}
+.thread .label{font-family:var(--disp);font-weight:800;text-transform:uppercase;
+  font-size:16px;letter-spacing:.05em;color:#c47b12;display:flex;align-items:center;gap:8px}
+.thread .label::before{content:"🧵";font-size:18px}
+
+/* tabulka pravidlo → následek */
+.rules-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px;
+  background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.rules-table th{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:14px;
+  letter-spacing:.04em;text-align:left;padding:12px 14px;background:var(--c1);color:#fff}
+.rules-table td{padding:11px 14px;border-top:1px solid var(--line);color:var(--ink-soft);vertical-align:top}
+.rules-table tr:nth-child(even) td{background:#f6f5f1}
+.rules-table .who{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:13.5px;white-space:nowrap}
+.rules-table .who.skola{color:var(--c1)}
+.rules-table .who.zakon{color:#c0392b}
+@media(max-width:600px){.rules-table,.rules-table tbody,.rules-table tr,.rules-table td,.rules-table th{display:block}
+  .rules-table th{display:none}
+  .rules-table td{border-top:none;padding:4px 14px}
+  .rules-table tr{border-top:1px solid var(--line);padding:8px 0}
+  .rules-table td:first-child{font-weight:700;color:var(--ink);padding-top:10px}}
+
+/* ---------- PŘEMOSTĚNÍ ---------- */
+.bridge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.bridge{
+  display:block;background:var(--white);border:1px solid var(--line);border-radius:16px;
+  padding:18px;text-decoration:none;color:var(--ink);transition:.18s;
+}
+.bridge:hover{border-color:var(--c1);transform:translateY(-3px);box-shadow:0 8px 22px rgba(91,108,196,.14)}
+.bridge .ttl{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:20px;margin-bottom:4px}
+.bridge .desc{font-size:14px;color:var(--ink-soft);margin-bottom:8px}
+.bridge .url{font-size:13px;color:var(--c1);font-weight:700;word-break:break-all}
+
+/* ---------- TEST ---------- */
+.quiz{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+.q{padding:18px 0;border-bottom:1px solid var(--line)}
+.q:last-of-type{border-bottom:none}
+.q .qhead{font-family:var(--disp);font-weight:700;font-size:20px;text-transform:none;
+  margin-bottom:12px;display:flex;gap:10px}
+.q .qnum{color:var(--c1)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{
+  text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:11px;
+  padding:11px 15px;font-family:var(--body);font-size:16px;color:var(--ink);cursor:pointer;transition:.15s;
+}
+.opt:hover{border-color:var(--c1)}
+.opt.correct{background:#e8f7ed;border-color:#46b06a;color:#1d6e3a;font-weight:700}
+.opt.wrong{background:#fdecec;border-color:#e06464;color:#a83232}
+.opt.disabled{cursor:default;pointer-events:none;opacity:.85}
+.fillrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.fillrow input{
+  font-family:var(--body);font-size:16px;padding:10px 14px;border:1.5px solid var(--line);
+  border-radius:11px;flex:1;min-width:180px;
+}
+.fillrow input.correct{background:#e8f7ed;border-color:#46b06a}
+.fillrow input.wrong{background:#fdecec;border-color:#e06464}
+
+/* třídění (sort) */
+.sort-list{display:flex;flex-direction:column;gap:9px}
+.sort-item{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:11px 15px;flex-wrap:wrap}
+.sort-item>span{font-size:16px}
+.binbtns{display:flex;gap:6px}
+.binbtns button{font-family:var(--disp);font-weight:600;text-transform:uppercase;font-size:14px;
+  border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:6px 13px;cursor:pointer;color:var(--ink-soft);transition:.14s}
+.binbtns button:hover{border-color:var(--c1)}
+.binbtns button.sel{background:var(--c1);color:#fff;border-color:var(--c1)}
+.sort-item.correct{border-color:#46b06a;background:#e8f7ed}
+.sort-item.wrong{border-color:#e06464;background:#fdecec}
+
+/* spojování (match) */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.match-col{display:flex;flex-direction:column;gap:8px}
+.mitem{font-family:var(--body);font-size:16px;border:1.5px solid var(--line);background:var(--paper);
+  border-radius:11px;padding:11px 14px;cursor:pointer;transition:.14s;text-align:center;position:relative}
+.mitem:hover{border-color:var(--c1)}
+.mitem.active{border-color:var(--c1);background:var(--c1-soft)}
+.mitem.paired{border-color:var(--amber);background:#fff8ec}
+.mitem.correct{border-color:#46b06a;background:#e8f7ed}
+.mitem.wrong{border-color:#e06464;background:#fdecec}
+.mbadge{font-family:var(--disp);font-weight:800;font-size:14px;color:#c47b12;margin-left:7px}
+.match-hint{font-size:13px;color:var(--ink-soft);margin-top:8px}
+
+.btn{
+  font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  font-size:16px;border:none;border-radius:11px;padding:11px 22px;cursor:pointer;transition:.15s;
+}
+.btn-check{background:var(--c1);color:#fff;margin-top:6px}
+.btn-check:hover{background:#4a5cb8}
+.fb{font-size:14.5px;margin-top:9px;padding:9px 13px;border-radius:9px;display:none}
+.fb.show{display:block}
+.fb.ok{background:#e8f7ed;color:#1d6e3a}
+.fb.no{background:#fdecec;color:#a83232}
+.score{
+  font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:24px;
+  text-align:center;margin-top:22px;padding:18px;border-radius:14px;background:var(--c1-soft);
+  color:var(--c1);display:none;
+}
+.score.show{display:block}
+
+/* ---------- ZDROJE ---------- */
+.src{display:flex;gap:14px;align-items:flex-start;background:var(--white);
+  border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:11px;
+  text-decoration:none;color:var(--ink);transition:.16s}
+.src:hover{border-color:var(--amber);transform:translateX(4px)}
+.src .ico{font-size:26px;line-height:1}
+.src .stxt .sname{font-family:var(--disp);font-weight:700;font-size:19px;text-transform:uppercase}
+.src .stxt .sdesc{font-size:14px;color:var(--ink-soft)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);color:#cdd2dc;padding:34px 0;margin-top:30px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+footer .brand{font-family:var(--disp);font-weight:700;text-transform:uppercase;color:#fff;font-size:18px}
+footer a{color:var(--amber);text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="num">1</span> LinguaSociety&amp;Time · Člověk a společnost · 6. ročník</div>
+    <h1>Já jako občan</h1>
+    <p class="lede">Proč musíme dodržovat pravidla, která jsme si sami nevymysleli? A kdo vlastně rozhoduje o tom, jak vypadá svět kolem nás?</p>
+  </div>
+  <svg class="hero-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="70" r="34" fill="#ffaa37"/>
+    <path d="M48 170c0-29 23-52 52-52s52 23 52 52" fill="#fff" opacity=".92"/>
+    <rect x="70" y="120" width="60" height="8" rx="4" fill="#5b6cc4"/>
+    <path d="M100 36l10 20-22 0z" fill="#fff"/>
+  </svg>
+</header>
+
+<!-- NAV -->
+<nav class="toc">
+  <div class="wrap">
+    <a href="#slova">Klíčová slova</a>
+    <a href="#vyklad">Výklad</a>
+    <a href="#most">Přemostění</a>
+    <a href="#test">Test</a>
+    <a href="#zdroje">Zdroje</a>
+  </div>
+</nav>
+
+<!-- KLÍČOVÁ SLOVA -->
+<section id="slova" class="wrap">
+  <div class="sec-tag">Klíčová slova · key words</div>
+  <h2>Co si zapamatuješ</h2>
+  <div class="kw-grid">
+    <div class="kw"><div class="cz">Pravidlo</div><div class="en">rule</div><div class="def">Dohodnutý způsob chování ve skupině (rodina, třída, klub).</div></div>
+    <div class="kw"><div class="cz">Zákon</div><div class="en">law</div><div class="def">Závazné pravidlo platné pro celý stát, které schvalují volení zástupci.</div></div>
+    <div class="kw"><div class="cz">Občan</div><div class="en">citizen</div><div class="def">Člověk, který patří k určitému státu nebo obci — má práva i povinnosti.</div></div>
+    <div class="kw"><div class="cz">Práva</div><div class="en">rights</div><div class="def">Co občan smí a co mu nikdo nesmí vzít.</div></div>
+    <div class="kw"><div class="cz">Povinnosti</div><div class="en">duties</div><div class="def">Co má občan dělat, aby společnost fungovala.</div></div>
+    <div class="kw"><div class="cz">Volby</div><div class="en">election</div><div class="def">Způsob, jak si lidé vybírají své zástupce.</div></div>
+    <div class="kw"><div class="cz">Hlas</div><div class="en">vote</div><div class="def">Rozhodnutí jednoho voliče. Každý hlas má stejnou váhu.</div></div>
+    <div class="kw"><div class="cz">Zástupce</div><div class="en">representative</div><div class="def">Člověk zvolený, aby rozhodoval za ostatní.</div></div>
+    <div class="kw"><div class="cz">Většina</div><div class="en">majority</div><div class="def">Více než polovina hlasů — rozhoduje o výsledku.</div></div>
+    <div class="kw"><div class="cz">Demokracie</div><div class="en">democracy</div><div class="def">Vláda, kde o věcech rozhodují občané — přímo nebo přes své zástupce.</div></div>
+  </div>
+</section>
+
+<!-- VÝKLAD -->
+<section id="vyklad" class="wrap">
+  <div class="sec-tag">Výklad</div>
+  <h2>Pravidla, zákony a já</h2>
+
+  <h3>Pravidla jsou všude</h3>
+  <p>Hned ráno se řídíš pravidly, i když o nich nepřemýšlíš. Doma máš dohodnuto, kdo vynáší koš. Ve škole zvoní na začátek hodiny. Na přechodu čekáš na zelenou. <strong>Pravidlo</strong> je dohoda o tom, jak se chovat, aby skupina lidí mohla žít a pracovat pohromadě.</p>
+  <p>Kdyby pravidla neexistovala, bylo by ráno chaotické: nikdo by nevěděl, kdy hodina začíná, a na přechodu by si nikdo nebyl jistý, jestli auto zastaví. Pravidla nejsou hlavně o zákazech — jsou hlavně o tom, abychom se na sebe mohli <strong>spolehnout</strong>.</p>
+
+  <h3>Kdy se z pravidla stane zákon</h3>
+  <p>Některá pravidla platí jen v jedné skupině — třída si může dohodnout, že o přestávce nebude pouštět hudbu nahlas. Jiná pravidla ale musí platit pro <strong>všechny ve státě</strong> stejně: že se nekrade, že auto zastaví na červené, že děti chodí do školy. Takovým pravidlům říkáme <strong>zákony</strong>.</p>
+  <div class="compare">
+    <div>
+      <h4>Pravidlo</h4>
+      <ul>
+        <li>Platí v jedné skupině</li>
+        <li>Domluví si ho lidé mezi sebou</li>
+        <li>Při porušení napomenutí, ztráta důvěry</li>
+        <li>Lze rychle změnit dohodou</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Zákon</h4>
+      <ul>
+        <li>Platí pro celý stát</li>
+        <li>Schvalují ho volení zástupci</li>
+        <li>Při porušení následuje trest podle práva</li>
+        <li>Mění se složitějším postupem</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Co se stane, když pravidlo porušíš</h3>
+  <p>I ve škole máš svá pravidla: chodit <strong>včas</strong> do hodin, nosit si <strong>pomůcky</strong>, na začátku hodiny odevzdat <strong>mobil</strong> do úschovy a chovat se <strong>slušně</strong>. Všechna jsou zapsaná ve <strong>školním řádu</strong>. Když je porušíš, škola má svá opatření — a čím vážnější porušení, tím přísnější následek:</p>
+  <table class="rules-table">
+    <thead><tr><th>Co uděláš</th><th>Co je porušeno</th><th>Co může následovat</th></tr></thead>
+    <tbody>
+      <tr><td>Přijdeš pozdě, zapomeneš pomůcky</td><td class="who skola">školní pravidlo</td><td>poznámka, napomenutí třídního učitele</td></tr>
+      <tr><td>Opakovaně rušíš výuku, neodevzdáš mobil</td><td class="who skola">školní řád</td><td>důtka třídního učitele, pak důtka ředitele školy</td></tr>
+      <tr><td>Hrubě napadneš spolužáka nebo učitele</td><td class="who skola">školní řád (závažně)</td><td>důtka ředitele, výjimečně i podmíněné vyloučení</td></tr>
+      <tr><td>Natočíš spolužáka bez dovolení a sdílíš video</td><td class="who zakon">zákon (GDPR, občanský zákoník)</td><td>řeší škola — a zároveň jde o porušení zákona</td></tr>
+      <tr><td>Někomu ublížíš na zdraví nebo něco ukradneš</td><td class="who zakon">zákon (trestní)</td><td>tohle už neřeší jen škola, ale i policie a soud</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <div class="label">Hlavní rozdíl</div>
+    <p style="margin:0">Porušení <strong>školního pravidla</strong> řeší <strong>škola</strong> (napomenutí, důtka). Porušení <strong>zákona</strong> řeší <strong>stát</strong> — policie a soud. Některé činy jsou ale obojí najednou: když ve škole někoho okradeš, porušíš školní řád <em>i</em> zákon.</p>
+  </div>
+
+  <p>Slovo <strong>občan</strong> znamená, že někam patříš — k obci, ke státu. S tím získáváš <strong>práva</strong> (třeba právo na vzdělání nebo svobodně říct svůj názor) a zároveň <strong>povinnosti</strong> (chodit do školy, dodržovat zákony, později platit daně). Být občanem tedy není jen razítko v dokladu — je to vztah mezi tebou a společností, ve které žiješ.</p>
+  <p>Ty sám jsi <strong>žák</strong> i <strong>občan</strong>. A můžeš být i <strong>členem školního parlamentu</strong> — pokud tě tvoje třída zvolí. Školní parlament se totiž <strong>volí</strong>, stejně jako dospělí volí své zástupce do obce a státu.</p>
+
+  <h3>Školní parlament — demokracie nanečisto</h3>
+  <p>Ve <strong>školním parlamentu</strong> se zkouší to, co dělají dospělí ve městě a ve státě. Každá třída si zvolí svého <strong>zástupce</strong>. Ten chodí na schůzky, přináší nápady spolužáků a hlasuje o tom, co se ve škole změní. Zástupce tedy nerozhoduje jen za sebe — mluví za celou třídu, i za ty, kteří v parlamentu nesedí.</p>
+  <div class="callout">
+    <div class="label">Zamysli se</div>
+    <p style="margin:0">Co by se stalo, kdyby zástupce hlasoval jen podle sebe a vůbec se neptal své třídy? Komu by tím ublížil?</p>
+  </div>
+
+  <h3>Jak se volí</h3>
+  <p>Při <strong>volbách</strong> dá každý volič svůj <strong>hlas</strong>. Důležité je, že hlas každého člověka má <strong>stejnou váhu</strong> — hlas premiéra váží přesně tolik co hlas studenta. Aby byly volby spravedlivé, jsou většinou <strong>tajné</strong>: nikdo nemusí ostatním ukazovat, koho volil.</p>
+  <div class="callout">
+    <div class="label">Pozor na slovíčka: nejvíc ≠ většina</div>
+    <p style="margin:0 0 8px">Tahle dvě slova znějí podobně, ale neznamenají totéž:</p>
+    <p style="margin:0 0 6px"><strong>Většina</strong> = víc než polovina. Když je ve třídě 20 dětí, většina je 11 a více.</p>
+    <p style="margin:0"><strong>Nejvíc</strong> = ze všech nejvyšší počet — ale klidně i méně než polovina. Když pro tři výlety hlasuje 8, 7 a 5 dětí, vyhrál výlet s 8 hlasy. Má sice <em>nejvíc</em> hlasů, ale ne <em>většinu</em> (8 z 20 není přes polovinu).</p>
+  </div>
+  <div class="callout">
+    <div class="label">Proč tajně?</div>
+    <p style="margin:0">Tajná volba chrání voliče. Když nikdo neví, koho jsi volil, nikdo tě nemůže za tvou volbu odměnit ani potrestat. Můžeš se tak rozhodovat svobodně.</p>
+  </div>
+</section>
+
+<!-- PŘEMOSTĚNÍ -->
+<section id="most" class="wrap">
+  <div class="sec-tag">Přemostění do dneška · zjisti více</div>
+  <h2>Kde se rozhoduje doopravdy</h2>
+  <p>Školní parlament je zmenšenina toho, jak funguje obec a stát. Tady jsou místa, kde se rozhoduje o věcech kolem tebe — a kde si můžeš sám ověřit, jak to chodí.</p>
+  <div class="bridge-grid">
+    <a class="bridge" href="https://www.psp.cz" target="_blank" rel="noopener">
+      <div class="ttl">Poslanecká sněmovna</div>
+      <div class="desc">Zvolení poslanci schvalují zákony pro celou ČR.</div>
+      <div class="url">psp.cz</div>
+    </a>
+    <a class="bridge" href="https://www.senat.cz" target="_blank" rel="noopener">
+      <div class="ttl">Senát</div>
+      <div class="desc">Druhá komora parlamentu — kontroluje a doplňuje zákony.</div>
+      <div class="url">senat.cz</div>
+    </a>
+    <a class="bridge" href="https://www.vlada.cz" target="_blank" rel="noopener">
+      <div class="ttl">Vláda ČR</div>
+      <div class="desc">Připravuje zákony a řídí stát ze dne na den.</div>
+      <div class="url">vlada.cz</div>
+    </a>
+    <a class="bridge" href="https://www.litomerice.cz" target="_blank" rel="noopener">
+      <div class="ttl">Město Litoměřice</div>
+      <div class="desc">Naše obec — zastupitelstvo rozhoduje o tom, co je hned za rohem.</div>
+      <div class="url">litomerice.cz</div>
+    </a>
+    <a class="bridge" href="https://www.volby.cz" target="_blank" rel="noopener">
+      <div class="ttl">Výsledky voleb</div>
+      <div class="desc">Oficiální stránka — uvidíš, jak skutečné volby dopadly.</div>
+      <div class="url">volby.cz</div>
+    </a>
+  </div>
+</section>
+
+<!-- TEST -->
+<section id="test" class="wrap">
+  <div class="sec-tag">Ověř se · klikací test</div>
+  <h2>Co už umíš</h2>
+  <div class="quiz" id="quiz">
+
+    <!-- Q1 scénář: většina vs nejvíc -->
+    <div class="q" data-type="choice" data-correct="1"
+         data-explain="Strana A má sice ze všech nejvíc hlasů, ale ne víc než polovinu. Nadpoloviční většina je víc než 50 %, a to 30 % není.">
+      <div class="qhead"><span class="qnum">1.</span> Ve volbách získala strana A 30 % hlasů, strana B 28 % a strana C 25 %. Vyhrála strana A. Získala <em>nadpoloviční většinu</em> hlasů?</div>
+      <div class="opts">
+        <button class="opt">Ano — kdo vyhraje, ten má automaticky většinu.</button>
+        <button class="opt">Ne — má sice nejvíc hlasů, ale ne přes polovinu (50 %).</button>
+        <button class="opt">Ano — 30 % je víc než polovina.</button>
+        <button class="opt">Z těchto čísel to nejde poznat.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q2 třídění pravidlo/zákon -->
+    <div class="q" data-type="sort">
+      <div class="qhead"><span class="qnum">2.</span> Roztřiď — je to běžné <strong>pravidlo</strong> (platí v jedné skupině), nebo <strong>zákon</strong> (platí pro celý stát)?</div>
+      <div class="sort-list">
+        <div class="sort-item" data-bin="1"><span>Nikoho neokrást</span><div class="binbtns"><button data-b="0">Pravidlo</button><button data-b="1">Zákon</button></div></div>
+        <div class="sort-item" data-bin="0"><span>O přestávce být potichu na chodbě</span><div class="binbtns"><button data-b="0">Pravidlo</button><button data-b="1">Zákon</button></div></div>
+        <div class="sort-item" data-bin="1"><span>Na přechodu zastavit na červenou</span><div class="binbtns"><button data-b="0">Pravidlo</button><button data-b="1">Zákon</button></div></div>
+        <div class="sort-item" data-bin="0"><span>Nosit ve škole přezůvky</span><div class="binbtns"><button data-b="0">Pravidlo</button><button data-b="1">Zákon</button></div></div>
+        <div class="sort-item" data-bin="1"><span>Chodit do školy (povinná školní docházka)</span><div class="binbtns"><button data-b="0">Pravidlo</button><button data-b="1">Zákon</button></div></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q3 spoj pojmy CLIL -->
+    <div class="q" data-type="match">
+      <div class="qhead"><span class="qnum">3.</span> Spoj český a anglický pojem — klikni na slovo vlevo, pak na jeho dvojici vpravo.</div>
+      <div class="match-grid">
+        <div class="match-col" data-side="L">
+          <button class="mitem" data-id="a">občan</button>
+          <button class="mitem" data-id="b">hlas</button>
+          <button class="mitem" data-id="c">zákon</button>
+          <button class="mitem" data-id="d">volby</button>
+        </div>
+        <div class="match-col" data-side="R">
+          <button class="mitem" data-id="c">law</button>
+          <button class="mitem" data-id="a">citizen</button>
+          <button class="mitem" data-id="d">election</button>
+          <button class="mitem" data-id="b">vote</button>
+        </div>
+      </div>
+      <div class="match-hint">Tip: omyl opravíš tlačítkem „Vymazat spojení".</div>
+      <button class="btn" style="background:#eee;color:var(--ink-soft);margin-top:10px;font-size:14px;padding:7px 14px" onclick="resetMatch(this)">Vymazat spojení</button>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q4 kdy se stáváš občanem (opravený distraktor) -->
+    <div class="q" data-type="choice" data-correct="0"
+         data-explain="18 let je věk, kdy smíš poprvé volit — ale občanem jsi mnohem dřív, většinou už od narození. Občanství a volební právo nejsou totéž.">
+      <div class="qhead"><span class="qnum">4.</span> Kdy se z člověka většinou stává <strong>občan</strong> České republiky?</div>
+      <div class="opts">
+        <button class="opt">Už narozením — pokud jsou jeho rodiče občany ČR.</button>
+        <button class="opt">Až když dosáhne 18 let.</button>
+        <button class="opt">Až když poprvé půjde k volbám.</button>
+        <button class="opt">Až po dokončení základní školy.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q5 proč tajně -->
+    <div class="q" data-type="choice" data-correct="2"
+         data-explain="Tajnost není o pohodlí ani o rychlosti — chrání svobodu voliče. Kdo neví, koho jsi volil, nemůže tě za to odměnit ani potrestat.">
+      <div class="qhead"><span class="qnum">5.</span> Proč je důležité, aby byla volba <strong>tajná</strong>?</div>
+      <div class="opts">
+        <button class="opt">Aby se ušetřil papír.</button>
+        <button class="opt">Aby volby trvaly co nejkratší dobu.</button>
+        <button class="opt">Aby se volič mohl rozhodnout svobodně a nikdo ho neovlivnil.</button>
+        <button class="opt">Aby vždycky vyhrál ten nejstarší kandidát.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q6 doplňovačka zástupce -->
+    <div class="q" data-type="fill" data-answers="zástupce|zástupcem|zastupce|zastupcem">
+      <div class="qhead"><span class="qnum">6.</span> Doplň: Třída si volí svého ______, který za ni hlasuje ve školním parlamentu.</div>
+      <div class="fillrow"><input type="text" placeholder="napiš slovo…"></div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q7 doplňovačka zákon -->
+    <div class="q" data-type="fill" data-answers="zákon|zakon">
+      <div class="qhead"><span class="qnum">7.</span> Doplň: Závazné pravidlo, které platí pro celý stát a schvalují ho volení zástupci, se jmenuje ______.</div>
+      <div class="fillrow"><input type="text" placeholder="napiš slovo…"></div>
+      <div class="fb"></div>
+    </div>
+
+    <button class="btn btn-check" id="checkBtn">Vyhodnotit test</button>
+    <div class="score" id="score"></div>
+  </div>
+</section>
+
+<!-- ZDROJE -->
+<section id="zdroje" class="wrap">
+  <div class="sec-tag">Kam dál · ověřené zdroje</div>
+  <h2>Zdroje k tématu</h2>
+  <a class="src" href="https://edu.ceskatelevize.cz" target="_blank" rel="noopener">
+    <div class="ico">📺</div>
+    <div class="stxt"><div class="sname">ČT edu</div><div class="sdesc">Krátká videa o demokracii, volbách a státu — ověřená Českou televizí.</div></div>
+  </a>
+  <a class="src" href="https://www.khanovaskola.cz" target="_blank" rel="noopener">
+    <div class="ico">🎓</div>
+    <div class="stxt"><div class="sname">Khanova škola</div><div class="sdesc">Vysvětlení pojmů občanské nauky srozumitelně a zdarma.</div></div>
+  </a>
+  <a class="src" href="https://zslingua.everbis.cz" target="_blank" rel="noopener">
+    <div class="ico">📚</div>
+    <div class="stxt"><div class="sname">eVerbis — školní knihovna</div><div class="sdesc">Online katalog naší školní knihovny. Hledej knihy o společnosti a státě.</div></div>
+  </a>
+  <a class="src" href="https://www.knihovnalitomerice.cz" target="_blank" rel="noopener">
+    <div class="ico">🏛️</div>
+    <div class="stxt"><div class="sname">Knihovna K. H. Máchy Litoměřice</div><div class="sdesc">Městská knihovna — naučná literatura pro tvůj projekt i referát.</div></div>
+  </a>
+  <a class="src" href="https://www.psp.cz" target="_blank" rel="noopener">
+    <div class="ico">🏢</div>
+    <div class="stxt"><div class="sname">Poslanecká sněmovna ČR</div><div class="sdesc">Oficiální zdroj — jak se u nás přijímají zákony.</div></div>
+  </a>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand">LinguaSociety&amp;Time · 6</div>
+      <div>Kapitola 1 — Já jako občan</div>
+    </div>
+    <div>ZŠ a MŠ Lingua Universal Litoměřice · Ing. Blanka Svobodová, MBA</div>
+  </div>
+</footer>
+
+<script>
+/* ---- diakritiku-tolerantní porovnání ---- */
+function norm(s){
+  return s.toLowerCase().trim()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .replace(/\s+/g," ");
+}
+
+/* ---- výběrové otázky: klik = okamžitá odezva + vysvětlení ---- */
+document.querySelectorAll('.q[data-type="choice"]').forEach(q=>{
+  const correct = parseInt(q.dataset.correct,10);
+  const opts = q.querySelectorAll('.opt');
+  opts.forEach((opt,i)=>{
+    opt.addEventListener('click',()=>{
+      if(q.dataset.answered) return;
+      q.dataset.answered = (i===correct) ? "ok" : "no";
+      opts.forEach(o=>o.classList.add('disabled'));
+      opts[correct].classList.add('correct');
+      if(i!==correct) opt.classList.add('wrong');
+      const fb = q.querySelector('.fb');
+      fb.classList.add('show', i===correct?'ok':'no');
+      const head = i===correct ? "Správně! 👍 " : "Není to ono. ";
+      fb.textContent = head + (q.dataset.explain || (i===correct?"":"Správná odpověď je zvýrazněná zeleně."));
+    });
+  });
+});
+
+/* ---- třídění (sort) ---- */
+document.querySelectorAll('.q[data-type="sort"] .sort-item').forEach(item=>{
+  item.querySelectorAll('.binbtns button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      item.querySelectorAll('.binbtns button').forEach(b=>b.classList.remove('sel'));
+      btn.classList.add('sel');
+      item.dataset.chosen = btn.dataset.b;
+    });
+  });
+});
+
+/* ---- spojování (match): klik vlevo, pak vpravo ---- */
+const MBADGES=['①','②','③','④','⑤','⑥'];
+document.querySelectorAll('.q[data-type="match"]').forEach(q=>{
+  let activeL=null, count=0;
+  q.querySelectorAll('.match-col[data-side="L"] .mitem').forEach(l=>{
+    l.addEventListener('click',()=>{
+      if(l.dataset.locked) return;
+      q.querySelectorAll('.match-col[data-side="L"] .mitem').forEach(x=>x.classList.remove('active'));
+      l.classList.add('active'); activeL=l;
+    });
+  });
+  q.querySelectorAll('.match-col[data-side="R"] .mitem').forEach(r=>{
+    r.addEventListener('click',()=>{
+      if(!activeL || r.dataset.locked) return;
+      const badge = MBADGES[count++] || '•';
+      activeL.classList.remove('active'); activeL.classList.add('paired'); activeL.dataset.locked="1";
+      r.classList.add('paired'); r.dataset.locked="1";
+      activeL.insertAdjacentHTML('beforeend',`<span class="mbadge">${badge}</span>`);
+      r.insertAdjacentHTML('beforeend',`<span class="mbadge">${badge}</span>`);
+      activeL.dataset.matchedTo = r.dataset.id;
+      activeL=null;
+    });
+  });
+});
+function resetMatch(btn){
+  const q = btn.closest('.q');
+  q.querySelectorAll('.mitem').forEach(m=>{
+    m.classList.remove('active','paired','correct','wrong');
+    delete m.dataset.locked; delete m.dataset.matchedTo;
+    const b=m.querySelector('.mbadge'); if(b) b.remove();
+  });
+  const fb=q.querySelector('.fb'); fb.className='fb'; fb.textContent='';
+}
+
+/* ---- vyhodnocení celého testu ---- */
+document.getElementById('checkBtn').addEventListener('click',()=>{
+  const allQ = document.querySelectorAll('.q');
+  let correct = 0, total = allQ.length;
+
+  allQ.forEach(q=>{
+    const type = q.dataset.type;
+    const fb = q.querySelector('.fb');
+
+    if(type==="choice"){
+      if(q.dataset.answered==="ok") correct++;
+
+    } else if(type==="fill"){
+      const inp = q.querySelector('input');
+      const accepted = q.dataset.answers.split('|').map(norm);
+      const ok = accepted.includes(norm(inp.value));
+      inp.classList.remove('correct','wrong');
+      inp.classList.add(ok?'correct':'wrong');
+      fb.className='fb show '+(ok?'ok':'no');
+      fb.textContent = ok ? "Správně! 👍" : "Zkus to znovu — zkontroluj pravopis.";
+      if(ok) correct++;
+
+    } else if(type==="sort"){
+      let allOk = true;
+      q.querySelectorAll('.sort-item').forEach(item=>{
+        const ok = item.dataset.chosen === item.dataset.bin;
+        item.classList.remove('correct','wrong');
+        item.classList.add(ok?'correct':'wrong');
+        if(!ok) allOk=false;
+      });
+      fb.className='fb show '+(allOk?'ok':'no');
+      fb.textContent = allOk ? "Všechno správně roztříděné! 👍" : "Některé položky nesedí — zkontroluj červené.";
+      if(allOk) correct++;
+
+    } else if(type==="match"){
+      let allOk = true, answered=true;
+      const Ls = q.querySelectorAll('.match-col[data-side="L"] .mitem');
+      Ls.forEach(l=>{
+        if(!l.dataset.matchedTo){ answered=false; allOk=false; return; }
+        const ok = l.dataset.matchedTo === l.dataset.id;
+        l.classList.remove('paired'); l.classList.add(ok?'correct':'wrong');
+        // obarvi i pravý protějšek
+        q.querySelectorAll('.match-col[data-side="R"] .mitem').forEach(r=>{
+          if(r.dataset.locked && r.dataset.id===l.dataset.matchedTo){
+            r.classList.remove('paired'); r.classList.add(ok?'correct':'wrong');
+          }
+        });
+        if(!ok) allOk=false;
+      });
+      fb.className='fb show '+(allOk?'ok':'no');
+      fb.textContent = !answered ? "Spoj nejdřív všechny dvojice." : (allOk ? "Všechny dvojice správně! 👍" : "Některé dvojice nesedí — zkontroluj červené.");
+      if(allOk) correct++;
+    }
+  });
+
+  const sc = document.getElementById('score');
+  sc.classList.add('show');
+  let msg = correct===total ? "Skvělé, všechno správně! 🏆"
+          : correct>=total*0.6 ? "Dobrá práce! 💪"
+          : "Projdi si výklad ještě jednou. 📖";
+  sc.textContent = `${correct} / ${total} bodů — ${msg}`;
+  sc.scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>
