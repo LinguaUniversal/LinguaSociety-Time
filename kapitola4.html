@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>3 · Pravěk — LinguaSociety&amp;Time 6</title>
+<title>4 · Mezopotámie — LinguaSociety&amp;Time 6</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
@@ -11,8 +11,8 @@
 :root{
   --teal:#32a0d2;
   --amber:#ffaa37;
-  --c1:#4c5e44;            /* akcent kapitoly 3 — kámen / příroda (ztmaveno pro kontrast) */
-  --c1-soft:#eef0e9;
+  --c1:#2a5fa6;            /* akcent kapitoly 4 — lapisová modř (Ištařina brána) */
+  --c1-soft:#eaf0f9;
   --ink:#1c2230;
   --ink-soft:#4a5160;
   --paper:#fbfaf7;
@@ -28,7 +28,7 @@ body{font-family:var(--body);color:var(--ink);background:var(--paper);line-heigh
 .wrap{max-width:880px;margin:0 auto;padding:0 22px}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,var(--c1) 0%,#36422f 100%);color:var(--white);padding:54px 0 60px;position:relative;overflow:hidden}
+.hero{background:linear-gradient(135deg,var(--c1) 0%,#173a66 100%);color:var(--white);padding:54px 0 60px;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.12) 1px,transparent 0);background-size:26px 26px;opacity:.5}
 .hero .wrap{position:relative;z-index:2}
 .eyebrow{font-family:var(--disp);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:15px;opacity:.85;display:flex;align-items:center;gap:10px}
@@ -81,6 +81,19 @@ p strong{color:var(--ink)}
 .tl-item .ep{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:19px;color:var(--ink)}
 .tl-item .ms{font-size:14.5px;color:var(--ink-soft)}
 .tl-item .ms b{color:var(--c1)}
+
+/* porovnání tehdy/dnes */
+.cmp2{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:16px 0}
+.cmp2 .ch{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:15px;padding:10px 14px;color:#fff}
+.cmp2 .ch.a{background:var(--c1)}
+.cmp2 .ch.b{background:var(--amber);color:var(--ink)}
+.cmp2 .cell{padding:11px 14px;font-size:14.5px;border-top:1px solid var(--line)}
+.cmp2 .cell.l{border-right:1px solid var(--line)}
+@media(max-width:520px){.cmp2 .cell,.cmp2 .ch{font-size:13px}}
+/* sedm divů */
+.wonders{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin:12px 0 0;padding:0}
+.wonders li{font-size:14px;padding:9px 12px;background:var(--white);border:1px solid var(--line);border-radius:10px}
+.wonders li b{color:var(--c1)}
 
 /* časová přímka pravěku */
 .scale{display:flex;gap:0;overflow-x:auto;padding:8px 0 14px;margin:18px 0}
@@ -186,16 +199,17 @@ footer a{color:var(--amber);text-decoration:none}
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow"><span class="num">3</span> LinguaSociety&amp;Time · Člověk a společnost · 6. ročník</div>
-    <h1>Pravěk</h1>
-    <p class="lede">Nejdelší a nejstarší úsek dějin — doba dávno před písmem, kdy se z dávných předků stával člověk.</p>
+    <div class="eyebrow"><span class="num">4</span> LinguaSociety&amp;Time · Člověk a společnost · 6. ročník</div>
+    <h1>Mezopotámie</h1>
+    <p class="lede">Země mezi dvěma řekami, kde vznikla první města, první písmo i první zapsané zákony.</p>
   </div>
   <svg class="hero-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M40 150 Q60 70 100 70 Q140 70 160 150 Z" fill="#fff" opacity=".92"/>
-    <circle cx="100" cy="95" r="20" fill="#ffaa37"/>
-    <rect x="70" y="150" width="60" height="10" rx="3" fill="#5f7355"/>
-    <path d="M150 60l16 8-16 8z" fill="#fff"/>
-    <line x1="120" y1="120" x2="150" y2="64" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <rect x="38" y="150" width="124" height="16" fill="#fff" opacity=".95"/>
+    <polygon points="54,150 146,150 136,122 64,122" fill="#fff" opacity=".95"/>
+    <polygon points="70,122 130,122 122,96 78,96" fill="#ffaa37"/>
+    <polygon points="84,96 116,96 110,72 90,72" fill="#fff" opacity=".95"/>
+    <rect x="95" y="58" width="10" height="16" fill="#ffaa37"/>
+    <line x1="100" y1="150" x2="100" y2="74" stroke="#2a5fa6" stroke-width="3" opacity=".5"/>
   </svg>
 </header>
 
@@ -214,107 +228,104 @@ footer a{color:var(--amber);text-decoration:none}
   <div class="sec-tag">Klíčová slova · key words</div>
   <h2>Co si zapamatuješ</h2>
   <div class="kw-grid">
-    <div class="kw"><div class="cz">Pravěk</div><div class="en">prehistory</div><div class="def">Nejstarší a nejdelší období dějin — doba před vynálezem písma.</div></div>
-    <div class="kw"><div class="cz">Předek</div><div class="en">ancestor</div><div class="def">Ten, z koho jsme se postupně vyvinuli.</div></div>
-    <div class="kw"><div class="cz">Vývoj</div><div class="en">evolution</div><div class="def">Pomalá proměna živočichů během velmi dlouhé doby.</div></div>
-    <div class="kw"><div class="cz">Lovci a sběrači</div><div class="en">hunter-gatherers</div><div class="def">Lidé, kteří se živili lovem zvěře a sběrem rostlin.</div></div>
-    <div class="kw"><div class="cz">Zemědělství</div><div class="en">agriculture</div><div class="def">Pěstování plodin a chov zvířat.</div></div>
-    <div class="kw"><div class="cz">Doba kamenná</div><div class="en">Stone Age</div><div class="def">Nejdelší část pravěku — nástroje hlavně z kamene.</div></div>
-    <div class="kw"><div class="cz">Doba bronzová</div><div class="en">Bronze Age</div><div class="def">Lidé začali vyrábět nástroje z bronzu.</div></div>
-    <div class="kw"><div class="cz">Doba železná</div><div class="en">Iron Age</div><div class="def">Nástroje a zbraně z železa — tvrdšího kovu.</div></div>
-    <div class="kw"><div class="cz">Neolitická revoluce</div><div class="en">Neolithic Revolution</div><div class="def">Zlom, kdy se z lovců stali zemědělci.</div></div>
-    <div class="kw"><div class="cz">Archeolog</div><div class="en">archaeologist</div><div class="def">Vědec, který zkoumá hmotné pozůstatky minulosti.</div></div>
+    <div class="kw"><div class="cz">Starověk</div><div class="en">antiquity</div><div class="def">Období po pravěku — vznikají první státy a písmo.</div></div>
+    <div class="kw"><div class="cz">Staroorientální stát</div><div class="en">river-valley state</div><div class="def">Nejstarší stát v povodí velké řeky (Mezopotámie, Egypt, Indie, Čína).</div></div>
+    <div class="kw"><div class="cz">Mezopotámie</div><div class="en">Mesopotamia</div><div class="def">„Meziříčí" — země mezi řekami Eufrat a Tigris.</div></div>
+    <div class="kw"><div class="cz">Zavlažování</div><div class="en">irrigation</div><div class="def">Přivádění říční vody na pole pomocí kanálů a hrází.</div></div>
+    <div class="kw"><div class="cz">Sumerové</div><div class="en">Sumerians</div><div class="def">První civilizace v Mezopotámii — vynalezli kolo a písmo.</div></div>
+    <div class="kw"><div class="cz">Klínové písmo</div><div class="en">cuneiform</div><div class="def">Nejstarší písmo — klínky vtlačované do hliněných tabulek.</div></div>
+    <div class="kw"><div class="cz">Městský stát</div><div class="en">city-state</div><div class="def">Samostatné město s okolím a vlastním vládcem.</div></div>
+    <div class="kw"><div class="cz">Zikkurat</div><div class="en">ziggurat</div><div class="def">Mezopotamský stupňovitý chrám.</div></div>
+    <div class="kw"><div class="cz">Zákoník</div><div class="en">law code</div><div class="def">Sbírka zapsaných zákonů platných pro všechny.</div></div>
+    <div class="kw"><div class="cz">Epos</div><div class="en">epic</div><div class="def">Dlouhý veršovaný příběh o hrdinovi.</div></div>
   </div>
 </section>
 
 <!-- VÝKLAD -->
 <section id="vyklad" class="wrap">
-  <div class="sec-tag">Výklad</div>
-  <h2>Cesta k člověku</h2>
+  <div class="sec-tag">Výklad · čti a objevuj</div>
+  <h2>Když začínají dějiny</h2>
 
-  <h3>Co je pravěk</h3>
-  <p><strong>Pravěk</strong> je vůbec nejstarší a zdaleka <strong>nejdelší</strong> období dějin. Je to doba <strong>před vynálezem písma</strong>, takže z ní nemáme žádné texty — poznáváme ji z <strong>hmotných pramenů</strong>, které vykopávají archeologové (jak jsme si říkali v minulé kapitole).</p>
+  <p>V minulé kapitole jsme skončili tím, že <strong>pravěk končí tam, kde se objeví písmo</strong>. A přesně tím začíná nové období — <strong>starověk</strong>. Oddělují ho dva velké vynálezy: <strong>vznik států</strong> a <strong>vznik písma</strong>.</p>
 
-  <h3>Jak dlouhý vlastně pravěk je</h3>
-  <p>Pravěk se neměří na roky, ale na <strong>tisíce a miliony let</strong>. Aby sis tu nepředstavitelnou délku lépe srovnal, tady jsou hlavní mezníky — od nejstaršího po nejmladší:</p>
-  <div class="scale">
-    <div class="scale-step"><div class="when">~6 mil. let</div><div class="what">předci se oddělili od šimpanzů</div></div>
-    <div class="scale-step"><div class="when">~2,5 mil.</div><div class="what">Australopithecus a první nástroje</div></div>
-    <div class="scale-step"><div class="when">~1,8 mil.</div><div class="what">Homo erectus, oheň, odchod z Afriky</div></div>
-    <div class="scale-step"><div class="when">~300 tis.</div><div class="what">objevuje se Homo sapiens</div></div>
-    <div class="scale-step"><div class="when">~70 tis.</div><div class="what">sapiens opouští Afriku</div></div>
-    <div class="scale-step"><div class="when">~40 tis.</div><div class="what">jeskynní malby a sošky venuší</div></div>
-    <div class="scale-step"><div class="when">~12 tis.</div><div class="what">neolitická revoluce — zemědělství</div></div>
-    <div class="scale-step"><div class="when">~5 tis.</div><div class="what">vynález písma → konec pravěku</div></div>
-  </div>
-  <p class="scale-note">Přímka není přesně podle měřítka — kdyby byla, posledních pár tisíc let by se na ní skoro nevešlo.</p>
-
-  <h3>Vývojové fáze člověka</h3>
-  <p>Člověk se neobjevil najednou. Vyvíjel se velmi pomalu z dávných předků. Tady jsou hlavní fáze — od nejstarší po nejmladší:</p>
-  <div class="tl">
-    <div class="tl-item"><div class="ep">Australopithecus</div><div class="ms">„Jižní opice". Žil v Africe, měl malý mozek a jako jeden z prvních <b>chodil vzpřímeně po dvou</b>. Slavná je kostra zvaná „Lucy".</div></div>
-    <div class="tl-item"><div class="ep">Homo habilis</div><div class="ms">„Člověk zručný". Nejstarší zástupce rodu <em>Homo</em>. Vyráběl <b>první kamenné nástroje</b> a chvíli žil i vedle australopitéka.</div></div>
-    <div class="tl-item"><div class="ep">Homo erectus</div><div class="ms">„Člověk vzpřímený". Měl větší mozek, naučil se <b>používat oheň</b> a vydal se z Afriky do Evropy a Asie.</div></div>
-    <div class="tl-item"><div class="ep">Homo neanderthalensis</div><div class="ms">Neandertálec. Žil v <b>Evropě</b> v době ledové, byl statný, <b>pohřbíval mrtvé</b> — a žil souběžně s naším druhem. Vyhynul.</div></div>
-    <div class="tl-item"><div class="ep">Homo sapiens</div><div class="ms">„Člověk moudrý" — to jsme my. Mluví <b>jazykem</b>, pohřbívá a tvoří <b>umění</b> (jeskynní malby, venuše).</div></div>
-  </div>
-  <div class="callout">
-    <div class="label">Pozor na zjednodušení</div>
-    <p style="margin:0">Vývoj nebyl rovná čára, kde jeden druh „vystřídal" druhý. <strong>Některé druhy žily i vedle sebe</strong> — neandertálec a Homo sapiens se dokonce potkali. Byl to spletitý, pozvolný proces, ne žebřík.</p>
-  </div>
-
-  <h3>Jak lidé žili — tlupa, dělba práce</h3>
-  <p>Pravěcí lidé žili v malých skupinách, kterým říkáme <strong>tlupy</strong> — pár rodin, které spolu lovily, sbíraly a chránily se. V tlupě fungovala <strong>dělba práce</strong>: tradičně muži spíš <strong>lovili</strong> zvěř, ženy <strong>sbíraly</strong> rostliny, plody a pečovaly o děti. Společně tak měli dost potravy.</p>
-  <div class="callout">
-    <div class="label">Od matriarchátu k patriarchátu (proč asi)</div>
-    <p style="margin:0 0 6px">V nejstarší době (paleolit) měla podle historiků velkou váhu <strong>žena</strong> — dárkyně života a jistého zdroje potravy (sběr). Tomuto uspořádání říkáme <strong>matriarchát</strong>.</p>
-    <p style="margin:0">Když se ale lidé po neolitické revoluci usadili a začali hospodařit, vznikl <strong>majetek</strong> — pole, stáda, zásoby. O ten se staralo a bojovalo, a tak rostla moc <strong>mužů</strong>. Postupně převážil <strong>patriarchát</strong>. Tento proces navíc probíhal v různých částech světa v odlišných dobách.</p>
-  </div>
-
-  <h3>Doby pravěku a čím jsou typické</h3>
-  <p>Pravěk dělíme podle toho, z čeho lidé hlavně vyráběli své nástroje:</p>
+  <h3>Kde vznikaly první státy</h3>
+  <p>První velké státy nevznikly kdekoli — vyrostly v <strong>úrodných údolích velkých řek</strong>, kde se dařilo zemědělství. Aby řeku zkrotili, museli lidé společně budovat <strong>zavlažovací kanály a hráze</strong>. A to už vyžadovalo organizaci, společnou práci a vládce, který to řídí.</p>
+  <p>Těmto nejstarším státům říkáme <strong>staroorientální</strong> (z latinského <em>oriens</em> = východ). Vznikly zhruba ve stejné době (4.–3. tisíciletí př. n. l.) na čtyřech místech:</p>
   <div class="types">
-    <div class="type">
-      <div class="ico">🪨</div>
-      <h4>Doba kamenná</h4>
-      <p>Nejdelší část. Typické nástroje z <strong>pazourku</strong> — pěstní klíny a hroty šípů. Uvnitř proběhla neolitická revoluce.</p>
-      <div class="ex">pazourek · hroty šípů · pěstní klín · jeskynní malby</div>
-    </div>
-    <div class="type">
-      <div class="ico">🛠️</div>
-      <h4>Doba bronzová</h4>
-      <p>Lidé objevili bronz — slitinu mědi a cínu. Vyráběli z něj <strong>sekery, ozdobné šperky a spony</strong>; vznikla řemesla a náčelníci.</p>
-      <div class="ex">sekery · šperky · spony · náčelníci</div>
-    </div>
-    <div class="type">
-      <div class="ico">⚔️</div>
-      <h4>Doba železná</h4>
-      <p>Železo je tvrdší a dostupnější. Kovaly se z něj <strong>meče a nástroje</strong>. U nás žili Keltové ve velkých opevněných oppidech.</p>
-      <div class="ex">meče · železné nástroje · Keltové · oppida</div>
-    </div>
+    <div class="type"><div class="ico">🌊</div><h4>Mezopotámie</h4><p>mezi řekami <strong>Eufrat a Tigris</strong></p><div class="ex">dnešní Irák</div></div>
+    <div class="type"><div class="ico">🏺</div><h4>Egypt</h4><p>v údolí řeky <strong>Nil</strong></p><div class="ex">další kapitola</div></div>
+    <div class="type"><div class="ico">🛕</div><h4>Indie</h4><p>u řek <strong>Indus a Ganga</strong></p><div class="ex">Harappa</div></div>
+    <div class="type"><div class="ico">🐉</div><h4>Čína</h4><p>u řek <strong>Chuang-che</strong> (Žlutá řeka) a <strong>Jang-c’-ťiang</strong> (Modrá řeka)</p><div class="ex">Žlutá a Modrá řeka</div></div>
+  </div>
+  <div class="callout">
+    <div class="label">Dobré vědět</div>
+    <p style="margin:0">V téhle učebnici se podíváme hlavně na <strong>Mezopotámii a Egypt</strong>. Pamatuj ale, že ve stejné době už kvetly i civilizace v <strong>Indii a Číně</strong> — třeba města Harappa a Mohendžodáro nebo počátky čínské říše. Lidstvo dělalo velký skok hned na několika místech najednou.</p>
   </div>
 
-  <h3>Neolitická revoluce — největší zlom</h3>
-  <p>Nejdůležitější změna celého pravěku přišla v <strong>době kamenné</strong>. Lidé přestali jen lovit a sbírat a začali si <strong>sami pěstovat plodiny a chovat zvířata</strong>. Této obrovské změně říkáme <strong>neolitická revoluce</strong>.</p>
-  <p>Objevily se <strong>nové plodiny</strong> — obilí jako pšenice a ječmen, luštěniny, len — a lidé <strong>ochočili zvířata</strong> (nejdřív psa, pak ovce, kozy a dobytek). Protože se už nemuseli stěhovat za potravou, poprvé se <strong>usadili</strong>, postavili pevné příbytky a vznikly první <strong>vesnice</strong>.</p>
+  <h3>Co měly staroorientální státy společné</h3>
+  <p>Přestože ležely daleko od sebe, byly si v lecčem podobné:</p>
+  <div class="tl">
+    <div class="tl-item"><div class="ep">Velká řeka</div><div class="ms">Hlavní obživou bylo <b>zavlažovací zemědělství</b> v úrodném údolí.</div></div>
+    <div class="tl-item"><div class="ep">Jeden vládce</div><div class="ms">V čele stál <b>jediný panovník s neomezenou mocí</b>, který vládl s pomocí <b>úředníků, kněží a vojáků</b>.</div></div>
+    <div class="tl-item"><div class="ep">Písmo a města</div><div class="ms">Vznikla <b>první města</b> a <b>písmo</b>, kterým se zaznamenávaly zásoby, zákony i příběhy.</div></div>
+  </div>
   <div class="callout">
-    <div class="label">Nečekaný důsledek</div>
-    <p style="margin:0">Změna jídla měla i stinnou stránku: s obilím a kaší se lidem začaly víc <strong>kazit zuby</strong>, což u dřívějších lovců skoro nebylo. Historikové se dokonce přou, jestli si zemědělci oproti lovcům pomohli, nebo přidali práci.</p>
+    <div class="label">Předzvěst</div>
+    <p style="margin:0">Mnohem později v dějinách potkáme úplně <strong>jiný typ</strong> starověkého státu — antické Řecko a Řím u moře, kde se poprvé objeví i <strong>vláda občanů</strong>. Ale to předbíháme; zatím jsme u řek a králů.</p>
   </div>
 
-  <h3>Paleodieta — pravěk na talíři dnes</h3>
-  <p>Neolitická revoluce má překvapivou ozvěnu i dnes. Existuje moderní jídelníček zvaný <strong>paleodieta</strong>, který je postavený přesně na téhle hranici: jíst hlavně to, co měli k dispozici <strong>lovci a sběrači před zemědělstvím</strong> — maso, ryby, vejce, zeleninu, ovoce a ořechy — a vynechat to, co přinesla až neolitická revoluce (obiloviny, mléčné výrobky, cukr).</p>
+  <h3>Mezopotámie — země mezi řekami</h3>
+  <p><strong>Mezopotámie</strong> znamená řecky <strong>„Meziříčí"</strong> — leží mezi řekami <strong>Eufrat</strong> a <strong>Tigris</strong> (dnešní Irák a část Sýrie a Turecka). Této úrodné oblasti se říká <strong>úrodný půlměsíc</strong>.</p>
+
+  <h3>Sumerové — první civilizace</h3>
+  <p>Kolem roku <strong>4000 př. n. l.</strong> tu vznikla první civilizace — <strong>Sumerové</strong>. Vynalezli <strong>kolo</strong> i <strong>hrnčířský kruh</strong>. Žili v <strong>městských státech</strong> — každé velké město (např. <strong>Ur</strong>, <strong>Uruk</strong>, Lagaš, Eridu) bylo samostatné, mělo svého vládce a okolní pole. Uprostřed města stával <strong>zikkurat</strong> — stupňovitý chrám zasvěcený bohům.</p>
+
+  <h3>Klínové písmo — nejstarší písmo světa</h3>
+  <p>Sumerové vynalezli <strong>klínové písmo</strong>: rákosovým rydlem vtlačovali do <strong>hliněných tabulek</strong> malé klínky. První tabulky byly vlastně <strong>účetnictví</strong> — kolik obilí, kolik ovcí. Klínové písmo pokládáme za <strong>nejspíš nejstarší písmo</strong> na světě (přibližně stejně staré jako egyptské hieroglyfy).</p>
   <div class="callout">
-    <div class="label">Otázka k zamyšlení</div>
-    <p style="margin:0">Jedli ale všichni pravěcí lidé opravdu stejně? A víme to jistě, když z té doby nemáme žádné jídelníčky, jen kosti a zuby? Zkus na paleodietu uplatnit otázky z minulé kapitoly — kdo, kdy a jak to zjistil.</p>
+    <div class="label">Spojka s minulou kapitolou</div>
+    <p style="margin:0">Vzpomeň si: pravěk končí tam, kde se objeví písmo. Klínovým písmem tak v Mezopotámii doslova <strong>začínají psané dějiny</strong>.</p>
   </div>
 
-  <h3>Pravěk nekončí všude stejně</h3>
-  <p>Tohle je důležité: pravěk <strong>nekončí jedním datem pro celý svět</strong>. Končí tam a tehdy, kde se objeví <strong>písmo</strong>. A to bylo na každém místě jindy.</p>
-  <p>U nás je to dobře vidět: na našem území žili v době železné <strong>Keltové</strong> a potom germánské kmeny — ale <strong>stát s písmem tu nevznikl</strong>. Pravěk u nás proto trval dlouho a <strong>starověk tu prakticky neproběhl</strong> — z pravěku se přešlo skoro rovnou do <strong>středověku</strong>, kdy sem písmo a první státy dorazily.</p>
+  <h3>Epos o Gilgamešovi — nejstarší příběh</h3>
+  <p><strong>Epos o Gilgamešovi</strong> je dlouhý veršovaný příběh o králi města Uruku. Gilgameš hledá <strong>nesmrtelnost</strong> a nakonec pochopí, že žije dál ve svých činech. Je to <strong>nejstarší dochované velké literární dílo</strong> na světě — první příběh, který si lidé zapsali, místo aby si ho jen vyprávěli.</p>
+
+  <h3>Babylon a Chammurapiho zákoník</h3>
+  <p>Později Mezopotámii ovládla mocná království — na jihu <strong>Babylonie</strong> s hlavním městem <strong>Babylon</strong>, na severu <strong>Asýrie</strong>. Babylonský král <strong>Chammurapi</strong> (18. století př. n. l.) nechal vytesat do vysoké kamenné stély <strong>Chammurapiho zákoník</strong> — jeden z <strong>nejstarších a nejúplnějších dochovaných zákoníků</strong> na světě.</p>
+  <p>Proč je to tak důležité? Poprvé byla pravidla <strong>zapsaná a veřejná</strong> — platila pro všechny stejně a každý je mohl znát. Některé zákony nám ale dnes přijdou tvrdé a nespravedlivé:</p>
+  <div class="cmp2">
+    <div class="ch a">Chammurapi (před ~3700 lety)</div>
+    <div class="ch b">Naše zákony dnes</div>
+    <div class="cell l">Trest byl <strong>odveta</strong> — „oko za oko, zub za zub".</div>
+    <div class="cell r">Trest určuje <strong>soud</strong> podle zákona, ne pomsta.</div>
+    <div class="cell l">Boháč a otrok dostali za stejný čin <strong>jiný trest</strong>.</div>
+    <div class="cell r"><strong>Rovnost před zákonem</strong> — zákon platí pro všechny stejně.</div>
+    <div class="cell l">Pravidla dal poprvé <strong>veřejně zapsat</strong> na kámen.</div>
+    <div class="cell r">Zákony jsou veřejné a vycházejí z <strong>Ústavy</strong>.</div>
+  </div>
   <div class="callout">
-    <div class="label">Pravěk žije i dnes</div>
-    <p style="margin:0">Pravěk neskončil všude. I dnes existují společnosti, které nemají písmo a žijí jako lovci a sběrači — třeba obyvatelé ostrova Severní Sentinel. Nejsou „zaostalí" — jen si vybrali jinou cestu. I je studujeme bez písemných pramenů.</p>
+    <div class="label">Spojka s 1. kapitolou</div>
+    <p style="margin:0">Vzpomeň si na <strong>pyramidu zákonů</strong> z první kapitoly: u nás je na vrcholu Ústava a z ní vychází zákony. Chammurapi byl úplně první krůček na téhle dlouhé cestě — dát pravidla jednou provždy <strong>zapsat</strong>, aby nezávisela na náladě vládce.</p>
+  </div>
+
+  <h3>Asýrie, Babylon a konec Mezopotámie</h3>
+  <p>Na severu zesílila <strong>Asýrie</strong>. Král <strong>Aššurbanipal</strong> (7. stol. př. n. l.) sídlil v <strong>Ninive</strong> — moderním městě, které mělo i vodovod a zoologickou zahradu. Nechal tam zřídit slavnou <strong>knihovnu</strong> s více než 20 tisíci hliněnými tabulkami; díky ní se nám dochoval i epos o Gilgamešovi.</p>
+  <p>Roku <strong>612 př. n. l.</strong> Asýrii porazila Babylonie. Král <strong>Nabukadnezar II.</strong> proslavil Babylon stavbami jako <strong>Ištařina brána</strong> z modrých glazovaných cihel. Nakonec celou Mezopotámii dobyli <strong>Peršané</strong> (král <strong>Kýros</strong>, 6. stol. př. n. l.).</p>
+
+  <h3>Sedm divů starověkého světa</h3>
+  <p>Lidé později sestavili seznam <strong>sedmi divů starověkého světa</strong> — nejúžasnějších staveb své doby. Jeden z nich, <strong>Visuté zahrady v Babylonu</strong>, stál právě v Mezopotámii.</p>
+  <ul class="wonders">
+    <li><b>Visuté zahrady</b> v Babylonu</li>
+    <li>Velká <b>pyramida v Gíze</b> (Egypt)</li>
+    <li>Socha boha Dia v Olympii</li>
+    <li>Artemidin chrám v Efesu</li>
+    <li>Mauzoleum v Halikarnassu</li>
+    <li>Rhodský kolos</li>
+    <li>Maják na ostrově Faru</li>
+  </ul>
+  <div class="callout">
+    <div class="label">Zajímavost</div>
+    <p style="margin:0">Z celé sedmičky se do dneška dochovala <strong>jediná</strong> stavba — <strong>pyramida v Gíze</strong>. A tu navštívíme hned v další kapitole o Egyptě.</p>
   </div>
 </section>
 
@@ -324,31 +335,32 @@ footer a{color:var(--amber);text-decoration:none}
   <h2>Co už umíš</h2>
   <div class="quiz" id="quiz">
 
-    <!-- Q1 řazení vývojových fází -->
-    <div class="q" data-type="order" data-order="a,b,c,d">
-      <div class="qhead"><span class="qnum">1.</span> Seřaď vývojové fáze člověka od nejstarší po nejmladší (šipkami nahoru/dolů).</div>
-      <div class="order-list">
-        <div class="order-item" data-id="c"><span class="olabel"><span class="onum"></span>Homo erectus</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
-        <div class="order-item" data-id="a"><span class="olabel"><span class="onum"></span>Australopithecus</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
-        <div class="order-item" data-id="d"><span class="olabel"><span class="onum"></span>Homo sapiens</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
-        <div class="order-item" data-id="b"><span class="olabel"><span class="onum"></span>Homo habilis</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+    <!-- Q1 pravěk vs starověk -->
+    <div class="q" data-type="choice" data-correct="2"
+         data-explain="Pravěk od starověku oddělují dva velké vynálezy: vznik prvních států a vznik písma.">
+      <div class="qhead"><span class="qnum">1.</span> Co odděluje pravěk od starověku?</div>
+      <div class="opts">
+        <button class="opt">Objevení ohně.</button>
+        <button class="opt">Konec doby ledové.</button>
+        <button class="opt">Vznik prvních států a písma.</button>
+        <button class="opt">Vynález kola.</button>
       </div>
       <div class="fb"></div>
     </div>
 
-    <!-- Q2 spoj doba ↔ typický nález -->
+    <!-- Q2 spoj stát ↔ řeka -->
     <div class="q" data-type="match">
-      <div class="qhead"><span class="qnum">2.</span> Spoj dobu pravěku s nálezem, který je pro ni typický.</div>
+      <div class="qhead"><span class="qnum">2.</span> Spoj staroorientální stát s jeho řekou.</div>
       <div class="match-grid">
         <div class="match-col" data-side="L">
-          <button class="mitem" data-id="a">doba kamenná</button>
-          <button class="mitem" data-id="b">doba bronzová</button>
-          <button class="mitem" data-id="c">doba železná</button>
+          <button class="mitem" data-id="a">Mezopotámie</button>
+          <button class="mitem" data-id="b">Egypt</button>
+          <button class="mitem" data-id="c">Čína</button>
         </div>
         <div class="match-col" data-side="R">
-          <button class="mitem" data-id="b">ozdobné šperky a spony</button>
-          <button class="mitem" data-id="c">meče a opevněná oppida</button>
-          <button class="mitem" data-id="a">pazourkové hroty šípů</button>
+          <button class="mitem" data-id="b">Nil</button>
+          <button class="mitem" data-id="c">Žlutá řeka</button>
+          <button class="mitem" data-id="a">Eufrat a Tigris</button>
         </div>
       </div>
       <div class="match-hint">Tip: omyl opravíš tlačítkem „Vymazat spojení".</div>
@@ -356,86 +368,86 @@ footer a{color:var(--amber);text-decoration:none}
       <div class="fb"></div>
     </div>
 
-    <!-- Q3 třídění charakteristika → doba -->
+    <!-- Q3 třídění pravěk vs starověk -->
     <div class="q" data-type="sort">
-      <div class="qhead"><span class="qnum">3.</span> Do které doby pravěku to patří?</div>
+      <div class="qhead"><span class="qnum">3.</span> Patří to ještě do pravěku, nebo už do starověku?</div>
       <div class="sort-list">
-        <div class="sort-item" data-bin="0"><span>Lovci a sběrači, jeskynní malby</span><div class="binbtns"><button data-b="0">Kamenná</button><button data-b="1">Bronzová</button><button data-b="2">Železná</button></div></div>
-        <div class="sort-item" data-bin="1"><span>První kovové nástroje a čilý obchod</span><div class="binbtns"><button data-b="0">Kamenná</button><button data-b="1">Bronzová</button><button data-b="2">Železná</button></div></div>
-        <div class="sort-item" data-bin="2"><span>Keltové a opevněná hradiště</span><div class="binbtns"><button data-b="0">Kamenná</button><button data-b="1">Bronzová</button><button data-b="2">Železná</button></div></div>
+        <div class="sort-item" data-bin="0"><span>Lovci a sběrači, jeskynní malby</span><div class="binbtns"><button data-b="0">Pravěk</button><button data-b="1">Starověk</button></div></div>
+        <div class="sort-item" data-bin="1"><span>Klínové písmo a hliněné tabulky</span><div class="binbtns"><button data-b="0">Pravěk</button><button data-b="1">Starověk</button></div></div>
+        <div class="sort-item" data-bin="1"><span>Městské státy a jeden vládce</span><div class="binbtns"><button data-b="0">Pravěk</button><button data-b="1">Starověk</button></div></div>
+        <div class="sort-item" data-bin="0"><span>Pěstní klín z pazourku</span><div class="binbtns"><button data-b="0">Pravěk</button><button data-b="1">Starověk</button></div></div>
       </div>
       <div class="fb"></div>
     </div>
 
-    <!-- Q4 neolitická revoluce -->
-    <div class="q" data-type="choice" data-correct="2"
-         data-explain="Při neolitické revoluci lidé začali pěstovat plodiny a chovat zvířata. Nemuseli se už stěhovat za potravou, usadili se a vznikly první vesnice.">
-      <div class="qhead"><span class="qnum">4.</span> Co byla <strong>neolitická revoluce</strong>?</div>
-      <div class="opts">
-        <button class="opt">Velká válka mezi pravěkými kmeny.</button>
-        <button class="opt">Vynález písma.</button>
-        <button class="opt">Zlom, kdy se z lovců a sběračů stali zemědělci a lidé se usadili.</button>
-        <button class="opt">Objevení Ameriky.</button>
-      </div>
-      <div class="fb"></div>
-    </div>
-
-    <!-- Q5 Homo erectus -->
+    <!-- Q4 zikkurat -->
     <div class="q" data-type="choice" data-correct="1"
-         data-explain="Homo erectus, „člověk vzpřímený", se naučil používat oheň a vydal se z Afriky do dalších částí světa.">
-      <div class="qhead"><span class="qnum">5.</span> Čím je typický <strong>Homo erectus</strong>?</div>
+         data-explain="Zikkurat byl mezopotamský stupňovitý chrám zasvěcený bohům, který stával uprostřed města.">
+      <div class="qhead"><span class="qnum">4.</span> Co byl <strong>zikkurat</strong>?</div>
       <div class="opts">
-        <button class="opt">Postavil první města.</button>
-        <button class="opt">Naučil se používat oheň a vyšel z Afriky.</button>
-        <button class="opt">Vynalezl kolo a písmo.</button>
-        <button class="opt">Maloval jako první do jeskyní.</button>
+        <button class="opt">Hliněná tabulka s písmem.</button>
+        <button class="opt">Stupňovitý chrám uprostřed mezopotamského města.</button>
+        <button class="opt">Sbírka zákonů krále.</button>
+        <button class="opt">Loď na řece Eufrat.</button>
       </div>
       <div class="fb"></div>
     </div>
 
-    <!-- Q6 proč hmotné prameny -->
+    <!-- Q5 klínové písmo -->
     <div class="q" data-type="choice" data-correct="0"
-         data-explain="Pravěk je doba před vynálezem písma, takže z něj nemáme texty. Poznáváme ho hlavně z hmotných pramenů — z vykopávek.">
-      <div class="qhead"><span class="qnum">6.</span> Proč poznáváme pravěk hlavně z hmotných pramenů (vykopávek)?</div>
+         data-explain="Sumerové vtlačovali rákosovým rydlem klínky do hliněných tabulek. Klínové písmo je nejspíš nejstarší písmo na světě.">
+      <div class="qhead"><span class="qnum">5.</span> Jak vznikalo <strong>klínové písmo</strong>?</div>
       <div class="opts">
-        <button class="opt">Protože z té doby nemáme žádné písemné prameny.</button>
-        <button class="opt">Protože tehdy ještě nebyl kámen.</button>
-        <button class="opt">Protože pravěcí lidé psali jen do hlíny.</button>
-        <button class="opt">Protože filmy jsou spolehlivější.</button>
+        <button class="opt">Klínky se vtlačovaly do hliněných tabulek.</button>
+        <button class="opt">Tesalo se do pyramid.</button>
+        <button class="opt">Psalo se na papyrus.</button>
+        <button class="opt">Malovalo se na zdi jeskyní.</button>
       </div>
       <div class="fb"></div>
     </div>
 
-    <!-- Q7 lokální konec pravěku -->
+    <!-- Q6 řazení říší -->
+    <div class="q" data-type="order" data-order="a,b,c,d">
+      <div class="qhead"><span class="qnum">6.</span> Seřaď podle času od nejstaršího (šipkami nahoru/dolů).</div>
+      <div class="order-list">
+        <div class="order-item" data-id="b"><span class="olabel"><span class="onum"></span>Chammurapiho zákoník v Babylonu</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="d"><span class="olabel"><span class="onum"></span>Mezopotámii dobývají Peršané</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="a"><span class="olabel"><span class="onum"></span>Sumerské městské státy</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="c"><span class="olabel"><span class="onum"></span>Asyrská říše a Ninive</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q7 proč je zákoník důležitý -->
     <div class="q" data-type="choice" data-correct="2"
-         data-explain="Pravěk nekončí jedním datem pro celý svět — končí tam, kde se objeví písmo. U nás stát s písmem v pravěku nevznikl, a tak se přešlo skoro rovnou do středověku.">
-      <div class="qhead"><span class="qnum">7.</span> Čím končí pravěk a proč všude jindy?</div>
+         data-explain="Chammurapi dal pravidla poprvé veřejně zapsat na kámen. Díky tomu platila pro všechny stejně a každý je mohl znát — nezávisela na náladě vládce.">
+      <div class="qhead"><span class="qnum">7.</span> Čím je <strong>Chammurapiho zákoník</strong> tak důležitý?</div>
       <div class="opts">
-        <button class="opt">Skončil ve stejném roce na celém světě.</button>
-        <button class="opt">Skončil, když vyhynuli neandertálci.</button>
-        <button class="opt">Končí tam a tehdy, kde se objeví písmo — na každém místě jindy.</button>
-        <button class="opt">Skončil objevením bronzu.</button>
+        <button class="opt">Byl napsaný na papyru.</button>
+        <button class="opt">Zrušil všechny tresty.</button>
+        <button class="opt">Pravidla byla poprvé veřejně zapsaná a platila pro všechny.</button>
+        <button class="opt">Napsal ho Gilgameš.</button>
       </div>
       <div class="fb"></div>
     </div>
 
-    <!-- Q8 matriarchát/patriarchát -->
+    <!-- Q8 rozdíl tehdy/dnes -->
     <div class="q" data-type="choice" data-correct="1"
-         data-explain="Když se lidé po neolitické revoluci usadili a začali hospodařit, vznikl majetek (pole, stáda). O ten se bojovalo a pečovalo, a tak postupně rostla moc mužů — převážil patriarchát.">
-      <div class="qhead"><span class="qnum">8.</span> Co podle historiků nejspíš vedlo k přechodu od matriarchátu k patriarchátu?</div>
+         data-explain="U Chammurapiho dostal boháč a otrok za stejný čin jiný trest. Dnes platí rovnost před zákonem — zákon platí pro všechny stejně.">
+      <div class="qhead"><span class="qnum">8.</span> Co dnes platí <strong>jinak</strong> než za Chammurapiho?</div>
       <div class="opts">
-        <button class="opt">Ochlazení podnebí.</button>
-        <button class="opt">Vznik majetku po neolitické revoluci (pole a stáda).</button>
-        <button class="opt">Vynález písma.</button>
-        <button class="opt">Příchod Keltů.</button>
+        <button class="opt">Dnes nemáme žádné zákony.</button>
+        <button class="opt">Dnes platí rovnost před zákonem pro všechny stejně.</button>
+        <button class="opt">Dnes si pravidla nikdo nezapisuje.</button>
+        <button class="opt">Dnes trestá pomstu sám poškozený.</button>
       </div>
       <div class="fb"></div>
     </div>
 
-    <!-- Q9 doplňovačka -->
-    <div class="q" data-type="fill" data-answers="zemědělství|zemedelstvi|zemědělstvím|zemedelstvim">
-      <div class="qhead"><span class="qnum">9.</span> Doplň: Při neolitické revoluci začali lidé pěstovat plodiny a chovat zvířata — to dohromady nazýváme ______.</div>
-      <div class="fillrow"><input type="text" placeholder="napiš slovo…"></div>
+    <!-- Q9 doplňovačka Gilgameš -->
+    <div class="q" data-type="fill" data-answers="gilgamešovi|gilgamesovi|gilgameš|gilgames|o gilgamešovi">
+      <div class="qhead"><span class="qnum">9.</span> Doplň: Nejstarší známý příběh na světě je epos o ______.</div>
+      <div class="fillrow"><input type="text" placeholder="napiš jméno…"></div>
       <div class="fb"></div>
     </div>
 
@@ -448,17 +460,17 @@ footer a{color:var(--amber);text-decoration:none}
 <section id="zdroje" class="wrap">
   <div class="sec-tag">Kam dál · ověřené zdroje</div>
   <h2>Zdroje k tématu</h2>
-  <a class="src" href="https://edu.ceskatelevize.cz/hledani?q=prav%C4%9Bk" target="_blank" rel="noopener">
+  <a class="src" href="https://edu.ceskatelevize.cz/hledani?q=mezopot%C3%A1mie" target="_blank" rel="noopener">
     <div class="ico">📺</div>
-    <div class="stxt"><div class="sname">ČT edu — pravěk</div><div class="sdesc">Krátká videa o pravěku a vývoji člověka, ověřená Českou televizí.</div></div>
+    <div class="stxt"><div class="sname">ČT edu — Mezopotámie</div><div class="sdesc">Krátká ověřená videa o Mezopotámii a starověku.</div></div>
   </a>
-  <a class="src" href="https://www.nm.cz" target="_blank" rel="noopener">
-    <div class="ico">🦴</div>
-    <div class="stxt"><div class="sname">Národní muzeum</div><div class="sdesc">Sbírky nálezů z pravěku — opravdové hmotné prameny.</div></div>
+  <a class="src" href="https://www.britishmuseum.org/collection" target="_blank" rel="noopener">
+    <div class="ico">🏛️</div>
+    <div class="stxt"><div class="sname">British Museum — sbírky</div><div class="sdesc">Skutečné klínové tabulky a asyrské reliéfy online.</div></div>
   </a>
   <a class="src" href="https://zslingua.everbis.cz" target="_blank" rel="noopener">
     <div class="ico">📚</div>
-    <div class="stxt"><div class="sname">eVerbis — školní knihovna</div><div class="sdesc">Online katalog naší školní knihovny — knihy o dějinách.</div></div>
+    <div class="stxt"><div class="sname">eVerbis — školní knihovna</div><div class="sdesc">Online katalog naší školní knihovny — knihy o starověku.</div></div>
   </a>
   <a class="src" href="https://www.knihovnalitomerice.cz" target="_blank" rel="noopener">
     <div class="ico">📖</div>
@@ -470,7 +482,7 @@ footer a{color:var(--amber);text-decoration:none}
   <div class="wrap">
     <div>
       <div class="brand">LinguaSociety&amp;Time · 6</div>
-      <div>Kapitola 3 — Pravěk</div>
+      <div>Kapitola 4 — Mezopotámie</div>
     </div>
     <div>ZŠ a MŠ Lingua Universal Litoměřice · Ing. Blanka Svobodová, MBA</div>
   </div>
