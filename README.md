@@ -5,17 +5,17 @@ Propojuje dějepis a občanskou nauku. Sesterský projekt k **LinguaScience**.
 
 **Web:** https://linguauniversal.github.io/LinguaSociety-Time/
 
-## Hotové kapitoly (3/7)
+## Hotové kapitoly (6/7)
 
-1. **Já jako občan** — pravidla, vnitřní předpis a zákon, nadřazenost (Ústava → zákon → vyhláška), tři moci, instituce a volby, školní parlament
-2. **Jak poznáváme minulost** — čtyři typy pramenů, epochy a milníky, letopočty a století, historie ve filmu/AI
+1. **Já jako občan** — pravidla, vnitřní předpis a zákon, nadřazenost (Ústava → zákon → vyhláška), tři moci, instituce, volby, symboly státu, školní parlament
+2. **Jak poznáváme minulost** — čtyři typy pramenů, epochy a milníky, letopočty a století
 3. **Pravěk** — vývojové fáze člověka, doby (kamenná/bronzová/železná), neolitická revoluce, paleodieta
+4. **Mezopotámie** — staroorientální státy, Sumerové a klínové písmo, Chammurapiho zákoník
+5. **Egypt** — Nil, faraoni a bohové, pyramidy a mumie, hieroglyfy, hra senet
+6. **Řecko** — minojská a mykénská civilizace, polis a demokracie, báje a bohové, Alexandr Veliký
 
 ## Připravujeme
 
-4. Mezi řekami: Mezopotámie
-5. Dar Nilu: Egypt
-6. Polis a občan: Řecko
 7. Sedm pahorků: Řím
 
 ## Jak nahrát na web (GitHub Pages)
