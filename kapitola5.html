@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 · Egypt — LinguaSociety&amp;Time 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#32a0d2;
+  --amber:#ffaa37;
+  --c1:#b3811f;            /* akcent kapitoly 5 — egyptská zlatá / poušť */
+  --c1-soft:#f7efdd;
+  --ink:#1c2230;
+  --ink-soft:#4a5160;
+  --paper:#fbfaf7;
+  --line:#e4e0d6;
+  --white:#ffffff;
+  --disp:'Barlow Condensed',sans-serif;
+  --body:'Atkinson Hyperlegible',sans-serif;
+  --serif:'Fraunces',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:0 22px}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--c1) 0%,#5e4410 100%);color:var(--white);padding:54px 0 60px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.12) 1px,transparent 0);background-size:26px 26px;opacity:.5}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{font-family:var(--disp);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:15px;opacity:.85;display:flex;align-items:center;gap:10px}
+.eyebrow .num{background:var(--amber);color:var(--ink);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:700;letter-spacing:0}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(40px,8vw,68px);line-height:.98;margin:16px 0 14px;text-transform:uppercase;letter-spacing:-.01em}
+.hero .lede{font-family:var(--serif);font-style:italic;font-size:clamp(19px,3.4vw,25px);max-width:620px;opacity:.95}
+.hero-svg{position:absolute;right:-20px;bottom:-24px;width:230px;opacity:.92;z-index:1}
+@media(max-width:680px){.hero-svg{display:none}}
+
+/* NAV */
+nav.toc{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 22px}
+nav.toc a{font-family:var(--disp);font-weight:600;font-size:16px;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:7px 14px;border-radius:999px;white-space:nowrap;transition:.18s}
+nav.toc a:hover{color:var(--c1);background:var(--c1-soft)}
+
+/* SECTIONS */
+section{padding:46px 0}
+.sec-tag{font-family:var(--disp);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:var(--c1);display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.sec-tag::before{content:"";width:26px;height:3px;background:var(--amber);border-radius:2px}
+h2{font-family:var(--disp);font-weight:800;font-size:clamp(28px,5vw,40px);text-transform:uppercase;line-height:1;margin-bottom:22px;letter-spacing:-.01em}
+h3{font-family:var(--disp);font-weight:700;font-size:24px;text-transform:uppercase;letter-spacing:.01em;margin:30px 0 10px;color:var(--ink)}
+p{margin-bottom:14px;color:var(--ink-soft);font-size:17px}
+p strong{color:var(--ink)}
+
+/* KLÍČOVÁ SLOVA */
+.kw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.kw{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 16px;border-left:5px solid var(--c1)}
+.kw .cz{font-family:var(--disp);font-weight:700;font-size:21px;text-transform:uppercase;color:var(--ink)}
+.kw .en{font-style:italic;color:var(--c1);font-size:14px;margin-bottom:6px}
+.kw .def{font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+
+/* VÝKLAD */
+.callout{background:var(--c1-soft);border-radius:16px;padding:20px 22px;margin:22px 0;border:1px solid #dde2d6}
+.callout .label{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:var(--c1);margin-bottom:6px}
+
+/* 4 typy pramenů */
+.types{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:20px 0}
+.type{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;border-top:5px solid var(--c1)}
+.type .ico{font-size:30px;line-height:1;margin-bottom:8px}
+.type h4{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:20px;margin-bottom:5px}
+.type p{font-size:14.5px;margin:0}
+.type .ex{font-size:13.5px;color:var(--c1);font-weight:700;margin-top:8px}
+.type .where{font-size:13px;color:var(--ink-soft);margin-top:6px;border-top:1px dashed var(--line);padding-top:6px}
+
+/* timeline epoch */
+.tl{position:relative;margin:22px 0;padding-left:26px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:3px;background:var(--c1);border-radius:2px;opacity:.4}
+.tl-item{position:relative;margin-bottom:16px}
+.tl-item::before{content:"";position:absolute;left:-23px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--c1);border:3px solid var(--paper)}
+.tl-item .ep{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:19px;color:var(--ink)}
+.tl-item .ms{font-size:14.5px;color:var(--ink-soft)}
+.tl-item .ms b{color:var(--c1)}
+
+/* porovnání tehdy/dnes */
+.cmp2{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:16px 0}
+.cmp2 .ch{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:15px;padding:10px 14px;color:#fff}
+.cmp2 .ch.a{background:var(--c1)}
+.cmp2 .ch.b{background:var(--amber);color:var(--ink)}
+.cmp2 .cell{padding:11px 14px;font-size:14.5px;border-top:1px solid var(--line)}
+.cmp2 .cell.l{border-right:1px solid var(--line)}
+@media(max-width:520px){.cmp2 .cell,.cmp2 .ch{font-size:13px}}
+/* sedm divů */
+.wonders{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin:12px 0 0;padding:0}
+.wonders li{font-size:14px;padding:9px 12px;background:var(--white);border:1px solid var(--line);border-radius:10px}
+.wonders li b{color:var(--c1)}
+
+/* časová přímka pravěku */
+.scale{display:flex;gap:0;overflow-x:auto;padding:8px 0 14px;margin:18px 0}
+.scale-step{flex:0 0 auto;min-width:124px;position:relative;padding:26px 10px 0;text-align:center}
+.scale-step::before{content:"";position:absolute;top:14px;left:0;right:0;height:3px;background:var(--c1);opacity:.4}
+.scale-step::after{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:13px;height:13px;border-radius:50%;background:var(--c1);border:3px solid var(--paper)}
+.scale-step .when{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:15px;color:var(--c1)}
+.scale-step .what{font-size:12.5px;color:var(--ink-soft);line-height:1.3;margin-top:2px}
+.scale-note{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin:-4px 0 0}
+
+/* osa letopočtu */
+.axis{display:flex;align-items:stretch;margin:18px 0;border-radius:12px;overflow:hidden;border:1px solid var(--line);font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.03em;text-align:center}
+.axis span{padding:12px 8px;flex:1;display:flex;align-items:center;justify-content:center}
+.axis .ax-old{background:#f0e6df;color:var(--c1)}
+.axis .ax-zero{background:var(--c1);color:#fff;flex:1.2}
+.axis .ax-new{background:#fff4e6;color:#c47b12}
+@media(max-width:520px){.axis{font-size:11.5px}}
+
+/* PŘEMOSTĚNÍ */
+.bridge-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.bridge{display:block;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;color:var(--ink);transition:.18s}
+.bridge:hover{border-color:var(--c1);transform:translateY(-3px);box-shadow:0 8px 22px rgba(95,115,85,.16)}
+.bridge .ttl{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:20px;margin-bottom:4px}
+.bridge .desc{font-size:14px;color:var(--ink-soft);margin-bottom:8px}
+.bridge .url{font-size:13px;color:var(--c1);font-weight:700;word-break:break-all}
+
+/* TEST */
+.quiz{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+.q{padding:18px 0;border-bottom:1px solid var(--line)}
+.q:last-of-type{border-bottom:none}
+.q .qhead{font-family:var(--disp);font-weight:700;font-size:20px;margin-bottom:12px;display:flex;gap:10px}
+.q .qnum{color:var(--c1)}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:11px;padding:11px 15px;font-family:var(--body);font-size:16px;color:var(--ink);cursor:pointer;transition:.15s}
+.opt:hover{border-color:var(--c1)}
+.opt.correct{background:#e8f7ed;border-color:#46b06a;color:#1d6e3a;font-weight:700}
+.opt.wrong{background:#fdecec;border-color:#e06464;color:#a83232}
+.opt.disabled{cursor:default;pointer-events:none;opacity:.85}
+.fillrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.fillrow input{font-family:var(--body);font-size:16px;padding:10px 14px;border:1.5px solid var(--line);border-radius:11px;flex:1;min-width:180px}
+.fillrow input.correct{background:#e8f7ed;border-color:#46b06a}
+.fillrow input.wrong{background:#fdecec;border-color:#e06464}
+
+/* třídění (sort) */
+.sort-list{display:flex;flex-direction:column;gap:9px}
+.sort-item{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:11px 15px;flex-wrap:wrap}
+.sort-item>span{font-size:16px}
+.binbtns{display:flex;gap:6px;flex-wrap:wrap}
+.binbtns button{font-family:var(--disp);font-weight:600;text-transform:uppercase;font-size:13.5px;border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:6px 11px;cursor:pointer;color:var(--ink-soft);transition:.14s}
+.binbtns button:hover{border-color:var(--c1)}
+.binbtns button.sel{background:var(--c1);color:#fff;border-color:var(--c1)}
+.sort-item.correct{border-color:#46b06a;background:#e8f7ed}
+.sort-item.wrong{border-color:#e06464;background:#fdecec}
+
+/* řazení (order) */
+.order-list{display:flex;flex-direction:column;gap:8px}
+.order-item{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:10px 14px}
+.order-item .olabel{font-size:16px;display:flex;align-items:center;gap:10px}
+.order-item .onum{font-family:var(--disp);font-weight:800;color:var(--c1);font-size:18px;min-width:22px}
+.order-ctrls{display:flex;gap:6px}
+.order-ctrls button{font-family:var(--disp);font-weight:700;font-size:15px;line-height:1;border:1.5px solid var(--line);background:#fff;border-radius:8px;width:34px;height:34px;cursor:pointer;color:var(--ink-soft);transition:.14s}
+.order-ctrls button:hover{border-color:var(--c1);color:var(--c1)}
+.order-item.correct{border-color:#46b06a;background:#e8f7ed}
+.order-item.wrong{border-color:#e06464;background:#fdecec}
+
+/* spojování (match) */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.match-col{display:flex;flex-direction:column;gap:8px}
+.mitem{font-family:var(--body);font-size:16px;border:1.5px solid var(--line);background:var(--paper);border-radius:11px;padding:11px 14px;cursor:pointer;transition:.14s;text-align:center;position:relative}
+.mitem:hover{border-color:var(--c1)}
+.mitem.active{border-color:var(--c1);background:var(--c1-soft)}
+.mitem.paired{border-color:var(--amber);background:#fff8ec}
+.mitem.correct{border-color:#46b06a;background:#e8f7ed}
+.mitem.wrong{border-color:#e06464;background:#fdecec}
+.mbadge{font-family:var(--disp);font-weight:800;font-size:14px;color:#c47b12;margin-left:7px}
+.match-hint{font-size:13px;color:var(--ink-soft);margin-top:8px}
+
+.btn{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:16px;border:none;border-radius:11px;padding:11px 22px;cursor:pointer;transition:.15s}
+.btn-check{background:var(--c1);color:#fff;margin-top:6px}
+.btn-check:hover{background:#4d5e44}
+.fb{font-size:14.5px;margin-top:9px;padding:9px 13px;border-radius:9px;display:none}
+.fb.show{display:block}
+.fb.ok{background:#e8f7ed;color:#1d6e3a}
+.fb.no{background:#fdecec;color:#a83232}
+.score{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:24px;text-align:center;margin-top:22px;padding:18px;border-radius:14px;background:var(--c1-soft);color:var(--c1);display:none}
+.score.show{display:block}
+
+/* ZDROJE */
+.src{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:11px;text-decoration:none;color:var(--ink);transition:.16s}
+.src:hover{border-color:var(--amber);transform:translateX(4px)}
+.src .ico{font-size:26px;line-height:1}
+.src .stxt .sname{font-family:var(--disp);font-weight:700;font-size:19px;text-transform:uppercase}
+.src .stxt .sdesc{font-size:14px;color:var(--ink-soft)}
+
+footer{background:var(--ink);color:#cdd2dc;padding:34px 0;margin-top:30px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+footer .brand{font-family:var(--disp);font-weight:700;text-transform:uppercase;color:#fff;font-size:18px}
+footer a{color:var(--amber);text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><span class="num">5</span> LinguaSociety&amp;Time · Člověk a společnost · 6. ročník</div>
+    <h1>Egypt</h1>
+    <p class="lede">Dar Nilu — země faraonů, pyramid a bohů, jejíž obrázkové písmo se podařilo rozluštit až po tisících letech.</p>
+  </div>
+  <svg class="hero-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="150" cy="58" r="22" fill="#ffaa37"/>
+    <rect x="28" y="158" width="146" height="9" fill="#fff" opacity=".7"/>
+    <polygon points="38,158 112,158 75,86" fill="#fff" opacity=".95"/>
+    <polygon points="98,158 156,158 127,108" fill="#fff" opacity=".82"/>
+  </svg>
+</header>
+
+<!-- NAV -->
+<nav class="toc">
+  <div class="wrap">
+    <a href="#slova">Klíčová slova</a>
+    <a href="#vyklad">Výklad</a>
+    <a href="#test">Test</a>
+    <a href="#zdroje">Zdroje</a>
+  </div>
+</nav>
+
+<!-- KLÍČOVÁ SLOVA -->
+<section id="slova" class="wrap">
+  <div class="sec-tag">Klíčová slova · key words</div>
+  <h2>Co si zapamatuješ</h2>
+  <div class="kw-grid">
+    <div class="kw"><div class="cz">Faraon</div><div class="en">pharaoh</div><div class="def">Vládce Egypta, považovaný za živoucího boha.</div></div>
+    <div class="kw"><div class="cz">Nil</div><div class="en">the Nile</div><div class="def">Řeka, díky níž mohl Egypt existovat — „dar Nilu".</div></div>
+    <div class="kw"><div class="cz">Hieroglyfy</div><div class="en">hieroglyphs</div><div class="def">Egyptské obrázkové písmo.</div></div>
+    <div class="kw"><div class="cz">Papyrus</div><div class="en">papyrus</div><div class="def">Materiál na psaní z rostliny šáchoru.</div></div>
+    <div class="kw"><div class="cz">Pyramida</div><div class="en">pyramid</div><div class="def">Kamenná hrobka faraona ve tvaru jehlanu.</div></div>
+    <div class="kw"><div class="cz">Mumie</div><div class="en">mummy</div><div class="def">Zachované (vysušené) tělo zemřelého.</div></div>
+    <div class="kw"><div class="cz">Mumifikace</div><div class="en">mummification</div><div class="def">Postup, kterým se uchovávalo tělo zemřelého.</div></div>
+    <div class="kw"><div class="cz">Sarkofág</div><div class="en">sarcophagus</div><div class="def">Zdobená rakev.</div></div>
+    <div class="kw"><div class="cz">Polyteismus</div><div class="en">polytheism</div><div class="def">Víra ve více bohů.</div></div>
+    <div class="kw"><div class="cz">Posmrtný život</div><div class="en">afterlife</div><div class="def">Víra, že život pokračuje i po smrti.</div></div>
+  </div>
+</section>
+
+<!-- VÝKLAD -->
+<section id="vyklad" class="wrap">
+  <div class="sec-tag">Výklad · čti a objevuj</div>
+  <h2>Dar Nilu</h2>
+
+  <p>Egyptská civilizace vznikla zhruba ve stejné době jako Mezopotámie (kolem 4. tisíciletí př. n. l.) — ale v údolí jediné obrovské řeky, <strong>Nilu</strong>. Kolem dokola byla jen poušť, a tak se všechen život schoulil k řece.</p>
+  <div class="callout">
+    <div class="label">Proč „dar Nilu"</div>
+    <p style="margin:0">Nil se každý rok rozvodnil a zaplavil pole. Když voda opadla, zůstalo po ní úrodné <strong>bahno</strong>, ve kterém všechno krásně rostlo. Bez Nilu by byl Egypt jen poušť — proto mu starořecký dějepisec Hérodotos řekl <strong>„dar Nilu"</strong>.</p>
+  </div>
+
+  <h3>Faraon — vládce i bůh</h3>
+  <p>Zpočátku byly dva státy: <strong>Horní Egypt</strong> (na jihu) a <strong>Dolní Egypt</strong> (na severu). Kolem roku 3000 př. n. l. je sjednotil jeden vládce — <strong>faraon</strong>. Faraon nebyl jen král: Egypťané ho považovali za <strong>živoucího boha</strong> a měl naprostou moc (vzpomeň si na <strong>orientální despocii</strong> z minulé kapitoly). Vládl s pomocí úředníků, kněží a vojáků.</p>
+
+  <h3>Nejznámější faraoni</h3>
+  <div class="types">
+    <div class="type"><div class="ico">🔺</div><h4>Chufu (Cheops)</h4><p>Nechal postavit <strong>největší pyramidu</strong> v Gíze.</p></div>
+    <div class="type"><div class="ico">👑</div><h4>Hatšepsut</h4><p>Vzácná <strong>žena na trůně</strong> — vládla jako faraon.</p></div>
+    <div class="type"><div class="ico">⚱️</div><h4>Tutanchamon</h4><p>Mladý faraon, slavný díky <strong>nevykradené hrobce</strong>.</p></div>
+    <div class="type"><div class="ico">🏛️</div><h4>Ramesse II.</h4><p>Velký stavitel — chrám <strong>Abú Simbel</strong>.</p></div>
+  </div>
+  <div class="callout">
+    <div class="label">Konec faraonů</div>
+    <p style="margin:0">Úplně poslední vládkyní byla <strong>Kleopatra</strong>. Po ní se Egypt stal součástí <strong>římské říše</strong>.</p>
+  </div>
+
+  <h3>Mnoho bohů</h3>
+  <p>Egypťané věřili v <strong>mnoho bohů</strong> (polyteismus). Často je zobrazovali s <strong>lidským tělem a zvířecí hlavou</strong>. Patřili k nim:</p>
+  <div class="types">
+    <div class="type"><div class="ico">☀️</div><h4>Re (Ra)</h4><p>bůh <strong>slunce</strong></p></div>
+    <div class="type"><div class="ico">🪶</div><h4>Usir (Osiris)</h4><p>vládce <strong>říše mrtvých</strong></p></div>
+    <div class="type"><div class="ico">🦅</div><h4>Hor (Horus)</h4><p>bůh nebe se <strong>sokolí</strong> hlavou</p></div>
+    <div class="type"><div class="ico">🐺</div><h4>Anup (Anubis)</h4><p>bůh <strong>mumifikace</strong> se šakalí hlavou</p></div>
+  </div>
+
+  <h3>Posmrtný život a rituály</h3>
+  <p>Egypťané věřili, že po smrti život <strong>pokračuje dál</strong>. Aby mohla duše žít, muselo se zachovat tělo. Proto vznikla <strong>mumifikace</strong> — složitý postup, kterým tělo vysušili a zabalili. Orgány ukládali do nádob zvaných <strong>kanopy</strong> a tělo do zdobené rakve — <strong>sarkofágu</strong>.</p>
+  <div class="callout">
+    <div class="label">Rituál vážení srdce</div>
+    <p style="margin:0">Egypťané věřili, že po smrti bůh <strong>zváží srdce</strong> zemřelého proti pírku pravdy. Kdo žil dobře, mohl projít do říše mrtvých. Návod na cestu si zesnulý bral s sebou — <strong>Knihu mrtvých</strong>.</p>
+  </div>
+
+  <h3>Pyramidy a hrobky</h3>
+  <p><strong>Pyramidy</strong> byly <strong>hrobky faraonů</strong> ve tvaru jehlanu — postavené z mnoha tisíc kamenných kvádrů, a to v době, kdy Egypťané ještě <strong>neznali kolo</strong>! Největší je <strong>Cheopsova</strong> v Gíze, kterou hlídá <strong>velká sfinga</strong> (tělo lva, lidská hlava). Později faraonové místo pyramid používali <strong>skalní hrobky</strong> v <strong>Údolí králů</strong>.</p>
+  <div class="callout">
+    <div class="label">Historik = detektiv</div>
+    <p style="margin:0">Tutanchamonovu hrobku objevil roku <strong>1922</strong> archeolog Howard Carter — jako jedna z mála nebyla vykradená. Vzpomeň si z 2. kapitoly: archeolog je detektiv minulosti.</p>
+  </div>
+
+  <h3>Hieroglyfy — egyptské písmo</h3>
+  <p><strong>Hieroglyfy</strong> jsou egyptské <strong>obrázkové písmo</strong>. Tesaly se do kamene na stěny chrámů a hrobek; pro běžné psaní se používala zjednodušená podoba na <strong>papyrus</strong> (materiál z rostliny šáchoru).</p>
+  <div class="callout">
+    <div class="label">Jak je rozluštili</div>
+    <p style="margin:0">Hieroglyfy se přestaly používat a nadlouho se staly záhadou. Klíčem byla <strong>Rosettská deska</strong> — stejný text na ní byl napsán hieroglyfy i řecky. Díky tomu je v 19. století rozluštil Francouz <strong>Champollion</strong>.</p>
+  </div>
+
+  <h3>Hra senet — co se hrálo</h3>
+  <p>Egypťané se i bavili. Hráli deskovou hru <strong>senet</strong> — jednu z <strong>nejstarších deskových her na světě</strong>. Hrály ji děti i faraoni a jedna se našla dokonce v Tutanchamonově hrobce. Postup po políčkách prý připomínal <strong>cestu duše do posmrtného života</strong>.</p>
+
+  <h3>Konec starověkého Egypta</h3>
+  <p>Egypt postupně slábl a dostával se pod nadvládu jiných říší. Ve 4. století př. n. l. ho dobyl <strong>Alexandr Veliký</strong>. Poslední dynastií byli <strong>Ptolemaiovci</strong> (z nich Kleopatra) a nakonec se Egypt stal <strong>provincií římské říše</strong> — odtud povede cesta k další části dějin.</p>
+</section>
+
+<!-- TEST -->
+<section id="test" class="wrap">
+  <div class="sec-tag">Ověř se · klikací test</div>
+  <h2>Co už umíš</h2>
+  <div class="quiz" id="quiz">
+
+    <div class="q" data-type="choice" data-correct="1"
+         data-explain="Nil se každý rok rozvodnil a zanechal na polích úrodné bahno. Bez něj by byl Egypt jen poušť — proto „dar Nilu".">
+      <div class="qhead"><span class="qnum">1.</span> Proč se Egyptu říká <strong>„dar Nilu"</strong>?</div>
+      <div class="opts">
+        <button class="opt">Protože v Nilu žili krokodýli.</button>
+        <button class="opt">Záplavy Nilu přinášely na pole úrodné bahno.</button>
+        <button class="opt">Protože Nil byl plný zlata.</button>
+        <button class="opt">Protože se po Nilu dováželo dřevo.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="q" data-type="choice" data-correct="2"
+         data-explain="Faraon byl vládce Egypta, kterého lidé považovali za živoucího boha s naprostou mocí.">
+      <div class="qhead"><span class="qnum">2.</span> Kdo byl <strong>faraon</strong>?</div>
+      <div class="opts">
+        <button class="opt">Kněz, který stavěl pyramidy.</button>
+        <button class="opt">Velitel vojska.</button>
+        <button class="opt">Vládce Egypta, považovaný za živoucího boha.</button>
+        <button class="opt">Písař, který uměl hieroglyfy.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="q" data-type="match">
+      <div class="qhead"><span class="qnum">3.</span> Spoj egyptského boha s tím, co měl na starosti.</div>
+      <div class="match-grid">
+        <div class="match-col" data-side="L">
+          <button class="mitem" data-id="a">Re</button>
+          <button class="mitem" data-id="b">Usir</button>
+          <button class="mitem" data-id="c">Anup</button>
+        </div>
+        <div class="match-col" data-side="R">
+          <button class="mitem" data-id="b">říše mrtvých</button>
+          <button class="mitem" data-id="c">mumifikace</button>
+          <button class="mitem" data-id="a">slunce</button>
+        </div>
+      </div>
+      <div class="match-hint">Tip: omyl opravíš tlačítkem „Vymazat spojení".</div>
+      <button class="btn" style="background:#eee;color:var(--ink-soft);margin-top:10px;font-size:14px;padding:7px 14px" onclick="resetMatch(this)">Vymazat spojení</button>
+      <div class="fb"></div>
+    </div>
+
+    <div class="q" data-type="choice" data-correct="0"
+         data-explain="Egypťané věřili v posmrtný život. Aby mohla duše žít dál, muselo se zachovat tělo — proto ho mumifikovali.">
+      <div class="qhead"><span class="qnum">4.</span> Proč Egypťané <strong>mumifikovali</strong> těla?</div>
+      <div class="opts">
+        <button class="opt">Věřili v posmrtný život a chtěli zachovat tělo.</button>
+        <button class="opt">Aby ušetřili místo v hrobkách.</button>
+        <button class="opt">Aby těla nezapáchala.</button>
+        <button class="opt">Byl to trest pro nepřátele.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="q" data-type="choice" data-correct="1"
+         data-explain="Hieroglyfy jsou egyptské obrázkové písmo. Tesalo se do kamene a psalo i na papyrus.">
+      <div class="qhead"><span class="qnum">5.</span> Co jsou <strong>hieroglyfy</strong>?</div>
+      <div class="opts">
+        <button class="opt">Egyptské hrobky.</button>
+        <button class="opt">Egyptské obrázkové písmo.</button>
+        <button class="opt">Egyptští bohové.</button>
+        <button class="opt">Egyptská hudba.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="q" data-type="choice" data-correct="2"
+         data-explain="Klíčem byla Rosettská deska se stejným textem v hieroglyfech i řecky. Díky ní rozluštil hieroglyfy Champollion.">
+      <div class="qhead"><span class="qnum">6.</span> Díky čemu se podařilo <strong>rozluštit hieroglyfy</strong>?</div>
+      <div class="opts">
+        <button class="opt">Díky Tutanchamonově hrobce.</button>
+        <button class="opt">Díky Knize mrtvých.</button>
+        <button class="opt">Díky Rosettské desce (stejný text i řecky).</button>
+        <button class="opt">Díky velké sfinze.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="q" data-type="order" data-order="a,b,c,d">
+      <div class="qhead"><span class="qnum">7.</span> Seřaď podle času od nejstaršího (šipkami nahoru/dolů).</div>
+      <div class="order-list">
+        <div class="order-item" data-id="c"><span class="olabel"><span class="onum"></span>Tutanchamon a skalní hrobky</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="a"><span class="olabel"><span class="onum"></span>Sjednocení Egypta faraonem</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="d"><span class="olabel"><span class="onum"></span>Egypt provincií Říma</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+        <div class="order-item" data-id="b"><span class="olabel"><span class="onum"></span>Stavba pyramid v Gíze</span><div class="order-ctrls"><button class="up" aria-label="nahoru">▲</button><button class="down" aria-label="dolů">▼</button></div></div>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="q" data-type="fill" data-answers="senet">
+      <div class="qhead"><span class="qnum">8.</span> Doplň: Jedna z nejstarších deskových her na světě, kterou hráli i faraoni, se jmenuje ______.</div>
+      <div class="fillrow"><input type="text" placeholder="napiš slovo…"></div>
+      <div class="fb"></div>
+    </div>
+
+    <div class="q" data-type="choice" data-correct="1"
+         data-explain="Egypt nejdřív dobyl Alexandr Veliký, později se stal provincií římské říše.">
+      <div class="qhead"><span class="qnum">9.</span> Kdo nakonec ovládl Egypt?</div>
+      <div class="opts">
+        <button class="opt">Sumerové.</button>
+        <button class="opt">Nejdřív Alexandr Veliký, pak římská říše.</button>
+        <button class="opt">Keltové.</button>
+        <button class="opt">Peršané natrvalo.</button>
+      </div>
+      <div class="fb"></div>
+    </div>
+
+    <button class="btn btn-check" id="checkBtn">Vyhodnotit test</button>
+    <div class="score" id="score"></div>
+  </div>
+</section>
+
+<!-- ZDROJE -->
+<section id="zdroje" class="wrap">
+  <div class="sec-tag">Kam dál · ověřené zdroje</div>
+  <h2>Zdroje k tématu</h2>
+  <a class="src" href="https://edu.ceskatelevize.cz/hledani?q=egypt" target="_blank" rel="noopener">
+    <div class="ico">📺</div>
+    <div class="stxt"><div class="sname">ČT edu — starověký Egypt</div><div class="sdesc">Krátká ověřená videa o Egyptě, pyramidách a faraonech.</div></div>
+  </a>
+  <a class="src" href="https://www.britishmuseum.org/collection" target="_blank" rel="noopener">
+    <div class="ico">🏛️</div>
+    <div class="stxt"><div class="sname">British Museum — sbírky</div><div class="sdesc">Skutečné mumie, papyry a sochy z Egypta online.</div></div>
+  </a>
+  <a class="src" href="https://zslingua.everbis.cz" target="_blank" rel="noopener">
+    <div class="ico">📚</div>
+    <div class="stxt"><div class="sname">eVerbis — školní knihovna</div><div class="sdesc">Online katalog naší školní knihovny — knihy o starověku.</div></div>
+  </a>
+  <a class="src" href="https://www.knihovnalitomerice.cz" target="_blank" rel="noopener">
+    <div class="ico">📖</div>
+    <div class="stxt"><div class="sname">Knihovna K. H. Máchy Litoměřice</div><div class="sdesc">Naučná literatura k referátům i projektům.</div></div>
+  </a>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand">LinguaSociety&amp;Time · 6</div>
+      <div>Kapitola 5 — Egypt</div>
+    </div>
+    <div>ZŠ a MŠ Lingua Universal Litoměřice · Ing. Blanka Svobodová, MBA</div>
+  </div>
+</footer>
+
+<script>
+/* ---- diakritiku-tolerantní porovnání ---- */
+function norm(s){
+  return s.toLowerCase().trim()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+    .replace(/\s+/g," ");
+}
+
+/* ---- výběrové otázky: klik = okamžitá odezva + vysvětlení ---- */
+document.querySelectorAll('.q[data-type="choice"]').forEach(q=>{
+  const correct = parseInt(q.dataset.correct,10);
+  const opts = q.querySelectorAll('.opt');
+  opts.forEach((opt,i)=>{
+    opt.addEventListener('click',()=>{
+      if(q.dataset.answered) return;
+      q.dataset.answered = (i===correct) ? "ok" : "no";
+      opts.forEach(o=>o.classList.add('disabled'));
+      opts[correct].classList.add('correct');
+      if(i!==correct) opt.classList.add('wrong');
+      const fb = q.querySelector('.fb');
+      fb.classList.add('show', i===correct?'ok':'no');
+      const head = i===correct ? "Správně! 👍 " : "Není to ono. ";
+      fb.textContent = head + (q.dataset.explain || (i===correct?"":"Správná odpověď je zvýrazněná zeleně."));
+    });
+  });
+});
+
+/* ---- třídění (sort) ---- */
+document.querySelectorAll('.q[data-type="sort"] .sort-item').forEach(item=>{
+  item.querySelectorAll('.binbtns button').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      item.querySelectorAll('.binbtns button').forEach(b=>b.classList.remove('sel'));
+      btn.classList.add('sel');
+      item.dataset.chosen = btn.dataset.b;
+    });
+  });
+});
+
+/* ---- řazení (order) ---- */
+function updateOrderNums(list){
+  [...list.children].forEach((it,i)=>{ const n=it.querySelector('.onum'); if(n) n.textContent=(i+1)+'.'; });
+}
+document.querySelectorAll('.q[data-type="order"]').forEach(q=>{
+  const list=q.querySelector('.order-list');
+  updateOrderNums(list);
+  list.querySelectorAll('.order-item').forEach(item=>{
+    item.querySelector('.up').addEventListener('click',()=>{
+      const prev=item.previousElementSibling;
+      if(prev) list.insertBefore(item,prev);
+      updateOrderNums(list);
+    });
+    item.querySelector('.down').addEventListener('click',()=>{
+      const next=item.nextElementSibling;
+      if(next) list.insertBefore(next,item);
+      updateOrderNums(list);
+    });
+  });
+});
+
+/* ---- spojování (match) ---- */
+const MBADGES=['①','②','③','④','⑤','⑥'];
+document.querySelectorAll('.q[data-type="match"]').forEach(q=>{
+  let activeL=null, count=0;
+  q.querySelectorAll('.match-col[data-side="L"] .mitem').forEach(l=>{
+    l.addEventListener('click',()=>{
+      if(l.dataset.locked) return;
+      q.querySelectorAll('.match-col[data-side="L"] .mitem').forEach(x=>x.classList.remove('active'));
+      l.classList.add('active'); activeL=l;
+    });
+  });
+  q.querySelectorAll('.match-col[data-side="R"] .mitem').forEach(r=>{
+    r.addEventListener('click',()=>{
+      if(!activeL || r.dataset.locked) return;
+      const badge = MBADGES[count++] || '•';
+      activeL.classList.remove('active'); activeL.classList.add('paired'); activeL.dataset.locked="1";
+      r.classList.add('paired'); r.dataset.locked="1";
+      activeL.insertAdjacentHTML('beforeend',`<span class="mbadge">${badge}</span>`);
+      r.insertAdjacentHTML('beforeend',`<span class="mbadge">${badge}</span>`);
+      activeL.dataset.matchedTo = r.dataset.id;
+      activeL=null;
+    });
+  });
+});
+function resetMatch(btn){
+  const q = btn.closest('.q');
+  q.querySelectorAll('.mitem').forEach(m=>{
+    m.classList.remove('active','paired','correct','wrong');
+    delete m.dataset.locked; delete m.dataset.matchedTo;
+    const b=m.querySelector('.mbadge'); if(b) b.remove();
+  });
+  const fb=q.querySelector('.fb'); fb.className='fb'; fb.textContent='';
+}
+
+/* ---- vyhodnocení celého testu ---- */
+document.getElementById('checkBtn').addEventListener('click',()=>{
+  const allQ = document.querySelectorAll('.q');
+  let correct = 0, total = allQ.length;
+
+  allQ.forEach(q=>{
+    const type = q.dataset.type;
+    const fb = q.querySelector('.fb');
+
+    if(type==="choice"){
+      if(q.dataset.answered==="ok") correct++;
+
+    } else if(type==="fill"){
+      const inp = q.querySelector('input');
+      const accepted = q.dataset.answers.split('|').map(norm);
+      const ok = accepted.includes(norm(inp.value));
+      inp.classList.remove('correct','wrong');
+      inp.classList.add(ok?'correct':'wrong');
+      fb.className='fb show '+(ok?'ok':'no');
+      fb.textContent = ok ? "Správně! 👍" : "Zkus to znovu — zkontroluj pravopis.";
+      if(ok) correct++;
+
+    } else if(type==="sort"){
+      let allOk = true;
+      q.querySelectorAll('.sort-item').forEach(item=>{
+        const ok = item.dataset.chosen === item.dataset.bin;
+        item.classList.remove('correct','wrong');
+        item.classList.add(ok?'correct':'wrong');
+        if(!ok) allOk=false;
+      });
+      fb.className='fb show '+(allOk?'ok':'no');
+      fb.textContent = allOk ? "Všechno správně zařazené! 👍" : "Některé prameny nesedí — zkontroluj červené.";
+      if(allOk) correct++;
+
+    } else if(type==="order"){
+      const correctOrder = q.dataset.order.split(',');
+      const items = [...q.querySelectorAll('.order-item')];
+      let allOk = true;
+      items.forEach((it,i)=>{
+        const ok = it.dataset.id === correctOrder[i];
+        it.classList.remove('correct','wrong');
+        it.classList.add(ok?'correct':'wrong');
+        if(!ok) allOk=false;
+      });
+      fb.className='fb show '+(allOk?'ok':'no');
+      fb.textContent = allOk ? "Správné pořadí! 👍" : "Pořadí ještě nesedí — zkontroluj červené.";
+      if(allOk) correct++;
+
+    } else if(type==="match"){
+      let allOk = true, answered=true;
+      const Ls = q.querySelectorAll('.match-col[data-side="L"] .mitem');
+      Ls.forEach(l=>{
+        if(!l.dataset.matchedTo){ answered=false; allOk=false; return; }
+        const ok = l.dataset.matchedTo === l.dataset.id;
+        l.classList.remove('paired'); l.classList.add(ok?'correct':'wrong');
+        q.querySelectorAll('.match-col[data-side="R"] .mitem').forEach(r=>{
+          if(r.dataset.locked && r.dataset.id===l.dataset.matchedTo){
+            r.classList.remove('paired'); r.classList.add(ok?'correct':'wrong');
+          }
+        });
+        if(!ok) allOk=false;
+      });
+      fb.className='fb show '+(allOk?'ok':'no');
+      fb.textContent = !answered ? "Spoj nejdřív všechny dvojice." : (allOk ? "Všechny dvojice správně! 👍" : "Některé dvojice nesedí — zkontroluj červené.");
+      if(allOk) correct++;
+    }
+  });
+
+  const sc = document.getElementById('score');
+  sc.classList.add('show');
+  let msg = correct===total ? "Skvělé, všechno správně! 🏆"
+          : correct>=total*0.6 ? "Dobrá práce! 💪"
+          : "Projdi si výklad ještě jednou. 📖";
+  sc.textContent = `${correct} / ${total} bodů — ${msg}`;
+  sc.scrollIntoView({behavior:'smooth',block:'center'});
+});
+</script>
+</body>
+</html>
