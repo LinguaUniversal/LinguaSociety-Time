@@ -11,7 +11,7 @@
 :root{
   --teal:#32a0d2;
   --amber:#ffaa37;
-  --c1:#5f7355;            /* akcent kapitoly 3 — kámen / příroda */
+  --c1:#4c5e44;            /* akcent kapitoly 3 — kámen / příroda (ztmaveno pro kontrast) */
   --c1-soft:#eef0e9;
   --ink:#1c2230;
   --ink-soft:#4a5160;
@@ -28,7 +28,7 @@ body{font-family:var(--body);color:var(--ink);background:var(--paper);line-heigh
 .wrap{max-width:880px;margin:0 auto;padding:0 22px}
 
 /* HERO */
-.hero{background:linear-gradient(135deg,var(--c1) 0%,#46563b 100%);color:var(--white);padding:54px 0 60px;position:relative;overflow:hidden}
+.hero{background:linear-gradient(135deg,var(--c1) 0%,#36422f 100%);color:var(--white);padding:54px 0 60px;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.12) 1px,transparent 0);background-size:26px 26px;opacity:.5}
 .hero .wrap{position:relative;z-index:2}
 .eyebrow{font-family:var(--disp);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:15px;opacity:.85;display:flex;align-items:center;gap:10px}
@@ -277,20 +277,20 @@ footer a{color:var(--amber);text-decoration:none}
     <div class="type">
       <div class="ico">🪨</div>
       <h4>Doba kamenná</h4>
-      <p>Nejdelší část. Nástroje z kamene, dřeva a kostí. Uvnitř proběhla neolitická revoluce.</p>
-      <div class="ex">lovci a sběrači · oheň · jeskynní malby</div>
+      <p>Nejdelší část. Typické nástroje z <strong>pazourku</strong> — pěstní klíny a hroty šípů. Uvnitř proběhla neolitická revoluce.</p>
+      <div class="ex">pazourek · hroty šípů · pěstní klín · jeskynní malby</div>
     </div>
     <div class="type">
       <div class="ico">🛠️</div>
       <h4>Doba bronzová</h4>
-      <p>Lidé objevili bronz — slitinu mědi a cínu. Vznikla nová řemesla a první kmenové svazy v čele s náčelníky.</p>
-      <div class="ex">bronz · slévači · obchod · náčelníci</div>
+      <p>Lidé objevili bronz — slitinu mědi a cínu. Vyráběli z něj <strong>sekery, ozdobné šperky a spony</strong>; vznikla řemesla a náčelníci.</p>
+      <div class="ex">sekery · šperky · spony · náčelníci</div>
     </div>
     <div class="type">
       <div class="ico">⚔️</div>
       <h4>Doba železná</h4>
-      <p>Železo je tvrdší a dostupnější. U nás žili Keltové ve velkých opevněných oppidech.</p>
-      <div class="ex">železo · Keltové · oppida</div>
+      <p>Železo je tvrdší a dostupnější. Kovaly se z něj <strong>meče a nástroje</strong>. U nás žili Keltové ve velkých opevněných oppidech.</p>
+      <div class="ex">meče · železné nástroje · Keltové · oppida</div>
     </div>
   </div>
 
@@ -336,9 +336,9 @@ footer a{color:var(--amber);text-decoration:none}
       <div class="fb"></div>
     </div>
 
-    <!-- Q2 spoj doba ↔ materiál -->
+    <!-- Q2 spoj doba ↔ typický nález -->
     <div class="q" data-type="match">
-      <div class="qhead"><span class="qnum">2.</span> Spoj dobu pravěku s materiálem, který je pro ni typický.</div>
+      <div class="qhead"><span class="qnum">2.</span> Spoj dobu pravěku s nálezem, který je pro ni typický.</div>
       <div class="match-grid">
         <div class="match-col" data-side="L">
           <button class="mitem" data-id="a">doba kamenná</button>
@@ -346,9 +346,9 @@ footer a{color:var(--amber);text-decoration:none}
           <button class="mitem" data-id="c">doba železná</button>
         </div>
         <div class="match-col" data-side="R">
-          <button class="mitem" data-id="b">bronz</button>
-          <button class="mitem" data-id="c">železo</button>
-          <button class="mitem" data-id="a">kámen</button>
+          <button class="mitem" data-id="b">ozdobné šperky a spony</button>
+          <button class="mitem" data-id="c">meče a opevněná oppida</button>
+          <button class="mitem" data-id="a">pazourkové hroty šípů</button>
         </div>
       </div>
       <div class="match-hint">Tip: omyl opravíš tlačítkem „Vymazat spojení".</div>

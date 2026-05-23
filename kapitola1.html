@@ -11,7 +11,7 @@
 :root{
   --teal:#32a0d2;
   --amber:#ffaa37;
-  --c1:#5b6cc4;            /* akcent kapitoly 1 — občanská modř */
+  --c1:#454f9e;            /* akcent kapitoly 1 — občanská modř (ztmaveno pro kontrast) */
   --c1-soft:#eef0fb;
   --ink:#1c2230;
   --ink-soft:#4a5160;
@@ -35,7 +35,7 @@ body{
 
 /* ---------- HERO ---------- */
 .hero{
-  background:linear-gradient(135deg,var(--c1) 0%,#3f4ea8 100%);
+  background:linear-gradient(135deg,var(--c1) 0%,#2c3576 100%);
   color:var(--white);
   padding:54px 0 60px;
   position:relative;
@@ -160,10 +160,18 @@ p strong{color:var(--ink)}
 .pyramid{display:flex;flex-direction:column;align-items:center;gap:6px;margin:18px 0}
 .pyr{border-radius:10px;color:#fff;text-align:center;padding:12px 10px;font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:.02em;max-width:100%}
 .pyr small{display:block;font-family:var(--body);font-weight:400;text-transform:none;font-size:12.5px;opacity:.93;letter-spacing:0;margin-top:2px}
-.pyr.t1{width:60%;background:var(--c1);font-size:18px}
-.pyr.t2{width:80%;background:#7a86bf;font-size:17px}
-.pyr.t3{width:96%;background:#aab2cf;font-size:15px}
-@media(max-width:520px){.pyr.t1,.pyr.t2,.pyr.t3{width:100%}}
+.pyr.t1{width:56%;background:var(--c1);font-size:18px}
+.pyr.t2{width:72%;background:#5e69b0;font-size:17px}
+.pyr.t3{width:88%;background:#aab2cf;color:var(--ink);font-size:15px}
+.pyr.t4{width:100%;background:#cdd2e2;color:var(--ink);font-size:15px}
+@media(max-width:520px){.pyr.t1,.pyr.t2,.pyr.t3,.pyr.t4{width:100%}}
+
+/* číslovaná hierarchie */
+.hier{display:flex;flex-direction:column;gap:9px;margin:16px 0}
+.hier-item{display:flex;gap:13px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:13px;padding:12px 15px}
+.hier-item .hn{font-family:var(--disp);font-weight:800;font-size:22px;color:var(--c1);min-width:22px;line-height:1.2}
+.hier-item p{font-size:15px;margin:0;color:var(--ink-soft)}
+.hier-item b{color:var(--ink)}
 
 /* karty institucí / mocí */
 .gov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin:18px 0}
@@ -289,7 +297,6 @@ footer a{color:var(--amber);text-decoration:none}
   <div class="wrap">
     <a href="#slova">Klíčová slova</a>
     <a href="#vyklad">Výklad</a>
-    <a href="#most">Přemostění</a>
     <a href="#test">Test</a>
     <a href="#zdroje">Zdroje</a>
   </div>
@@ -335,32 +342,47 @@ footer a{color:var(--amber);text-decoration:none}
   </div>
 
   <h3>Která pravidla jsou nadřazená</h3>
-  <p>Pravidla jsou uspořádaná jako pyramida: co je výš, tomu se to nižší musí přizpůsobit. Nic nesmí být v rozporu s tím, co je nad ním.</p>
+  <p>Právní pravidla jsou uspořádaná jako pyramida: co je výš, tomu se to nižší musí přizpůsobit. Nic nesmí být v rozporu s tím, co je nad ním.</p>
   <div class="pyramid">
     <div class="pyr t1">Ústava + Listina<small>nejvyšší zákon státu</small></div>
     <div class="pyr t2">Zákony<small>schvaluje Parlament</small></div>
-    <div class="pyr t3">Vyhlášky a vnitřní předpisy<small>např. obecní vyhláška, školní řád</small></div>
+    <div class="pyr t3">Vyhlášky<small>vydává ministerstvo nebo obec</small></div>
+    <div class="pyr t4">Školní pravidla<small>vnitřní předpis naší školy</small></div>
+  </div>
+  <p>Od nejvyššího po nejnižší:</p>
+  <div class="hier">
+    <div class="hier-item"><span class="hn">1</span><p><b>Ústava</b> — nejvyšší zákon státu. Všechny ostatní předpisy z ní musí vycházet a nesmí jí odporovat.</p></div>
+    <div class="hier-item"><span class="hn">2</span><p><b>Zákon</b> — základní právní předpis, který schvaluje Parlament (poslanci a senátoři). Určuje hlavní pravidla v zemi.</p></div>
+    <div class="hier-item"><span class="hn">3</span><p><b>Vyhláška</b> — nižší (prováděcí) předpis, který vydává ministerstvo nebo obec. Upřesňuje, jak se má zákon provádět v praxi.</p></div>
   </div>
   <div class="callout">
-    <div class="label">Příklad</div>
-    <p style="margin:0">Školní řád nesmí říkat nic, co by odporovalo zákonu — a zákon zase nesmí odporovat Ústavě. Proto je Ústava ten nejdůležitější dokument ve státě.</p>
+    <div class="label">Pojem „předpis"</div>
+    <p style="margin:0">„Předpis" je společný název pro všechny tyhle právní normy — ústavní zákon, zákon i vyhláška jsou druhy <strong>právních předpisů</strong>.</p>
+  </div>
+
+  <h3>Naše školní pravidla</h3>
+  <p>I naše škola má svá pravidla — <strong>vnitřní předpis</strong>, který nestojí proti zákonu, ale naopak vyrůstá z <strong>hodnot školy</strong> a pomáhá, aby se nám tu dobře žilo a učilo. Patří mezi ně:</p>
+  <div class="gov-grid">
+    <div class="gov-card"><div class="ico">🗣️</div><h4>Mluví jen jeden</h4><p>Only one speaks — když mluví jeden, ostatní naslouchají.</p></div>
+    <div class="gov-card"><div class="ico">✅</div><h4>Jsem připraven</h4><p>I'm prepared — mám, co na hodinu potřebuji.</p></div>
+    <div class="gov-card"><div class="ico">🤝</div><h4>Když můžu, pomůžu</h4><p>I help whenever I can — všímám si druhých a pomáhám.</p></div>
+    <div class="gov-card"><div class="ico">💭</div><h4>Promysli si</h4><p>Think it through — než něco udělám, zamyslím se.</p></div>
   </div>
 
   <h3>Co se stane, když pravidlo porušíš</h3>
-  <p>I ve škole máš svá pravidla: chodit <strong>včas</strong> do hodin, nosit si <strong>pomůcky</strong>, na začátku hodiny odevzdat <strong>mobil</strong> do úschovy a chovat se <strong>slušně</strong>. Všechna jsou zapsaná ve <strong>školním řádu</strong>. Když je porušíš, škola má svá opatření — a čím vážnější porušení, tím přísnější následek:</p>
+  <p>Když pravidlo porušíš, je důležité hlavně to, <strong>co jsi porušil</strong> a <strong>kdo to řeší</strong>. Drobnosti i kázeň ve škole řeší <strong>škola</strong>; vážnější věci, které porušují zákon, řeší <strong>stát</strong> — policie a soud.</p>
   <table class="rules-table">
-    <thead><tr><th>Co uděláš</th><th>Co je porušeno</th><th>Co může následovat</th></tr></thead>
+    <thead><tr><th>Co uděláš</th><th>Co porušíš</th><th>Kdo to řeší</th></tr></thead>
     <tbody>
-      <tr><td>Přijdeš pozdě, zapomeneš pomůcky</td><td class="who skola">školní pravidlo</td><td>poznámka, napomenutí třídního učitele</td></tr>
-      <tr><td>Opakovaně rušíš výuku, neodevzdáš mobil</td><td class="who skola">školní řád</td><td>důtka třídního učitele, pak důtka ředitele školy</td></tr>
-      <tr><td>Hrubě napadneš spolužáka nebo učitele</td><td class="who skola">školní řád (závažně)</td><td>důtka ředitele, výjimečně i podmíněné vyloučení</td></tr>
-      <tr><td>Natočíš spolužáka bez dovolení a sdílíš video</td><td class="who zakon">zákon (GDPR, občanský zákoník)</td><td>řeší škola — a zároveň jde o porušení zákona</td></tr>
-      <tr><td>Někomu ublížíš na zdraví nebo něco ukradneš</td><td class="who zakon">zákon (trestní)</td><td>tohle už neřeší jen škola, ale i policie a soud</td></tr>
+      <tr><td>Přijdeš pozdě, zapomeneš pomůcky</td><td class="who skola">školní pravidlo</td><td>řeší škola</td></tr>
+      <tr><td>Nadáváš spolužákovi</td><td class="who skola">školní řád</td><td>řeší škola</td></tr>
+      <tr><td>Natočíš spolužáka bez dovolení a sdílíš video</td><td class="who zakon">zákon (GDPR, občanský zákoník)</td><td>řeší škola i stát</td></tr>
+      <tr><td>Něco ukradneš nebo někomu ublížíš</td><td class="who zakon">trestní zákoník</td><td>řeší policie a soud</td></tr>
     </tbody>
   </table>
   <div class="callout">
     <div class="label">Hlavní rozdíl</div>
-    <p style="margin:0">Porušení <strong>školního pravidla</strong> řeší <strong>škola</strong> (napomenutí, důtka). Porušení <strong>zákona</strong> řeší <strong>stát</strong> — policie a soud. Některé činy jsou ale obojí najednou: když ve škole někoho okradeš, porušíš školní řád <em>i</em> zákon.</p>
+    <p style="margin:0">Porušení <strong>školního pravidla</strong> řeší <strong>škola</strong>. Porušení <strong>zákona</strong> řeší <strong>stát</strong> — policie a soud. Některé činy jsou ale obojí najednou: když ve škole někoho okradeš, porušíš školní řád <em>i</em> zákon.</p>
   </div>
 
   <p>Slovo <strong>občan</strong> znamená, že někam patříš — k obci, ke státu. S tím získáváš <strong>práva</strong> (třeba právo na vzdělání nebo svobodně říct svůj názor) a zároveň <strong>povinnosti</strong> (chodit do školy, dodržovat zákony, později platit daně). Být občanem tedy není jen razítko v dokladu — je to vztah mezi tebou a společností, ve které žiješ.</p>
@@ -441,40 +463,6 @@ footer a{color:var(--amber);text-decoration:none}
   <div class="callout">
     <div class="label">Spoj si to se školou</div>
     <p style="margin:0">Volby do školního parlamentu jsou jako obecní volby v malém: vybíráš zástupce pro místo, kde to nejlíp znáš — pro svou třídu a školu.</p>
-  </div>
-</section>
-
-<!-- PŘEMOSTĚNÍ -->
-<section id="most" class="wrap">
-  <div class="sec-tag">Přemostění do dneška · zjisti více</div>
-  <h2>Kde se rozhoduje doopravdy</h2>
-  <p>Školní parlament je zmenšenina toho, jak funguje obec a stát. Tady jsou místa, kde se rozhoduje o věcech kolem tebe — a kde si můžeš sám ověřit, jak to chodí.</p>
-  <div class="bridge-grid">
-    <a class="bridge" href="https://www.psp.cz" target="_blank" rel="noopener">
-      <div class="ttl">Poslanecká sněmovna</div>
-      <div class="desc">Zvolení poslanci schvalují zákony pro celou ČR.</div>
-      <div class="url">psp.cz</div>
-    </a>
-    <a class="bridge" href="https://www.senat.cz" target="_blank" rel="noopener">
-      <div class="ttl">Senát</div>
-      <div class="desc">Druhá komora parlamentu — kontroluje a doplňuje zákony.</div>
-      <div class="url">senat.cz</div>
-    </a>
-    <a class="bridge" href="https://www.vlada.cz" target="_blank" rel="noopener">
-      <div class="ttl">Vláda ČR</div>
-      <div class="desc">Připravuje zákony a řídí stát ze dne na den.</div>
-      <div class="url">vlada.cz</div>
-    </a>
-    <a class="bridge" href="https://www.litomerice.cz" target="_blank" rel="noopener">
-      <div class="ttl">Město Litoměřice</div>
-      <div class="desc">Naše obec — zastupitelstvo rozhoduje o tom, co je hned za rohem.</div>
-      <div class="url">litomerice.cz</div>
-    </a>
-    <a class="bridge" href="https://www.volby.cz" target="_blank" rel="noopener">
-      <div class="ttl">Výsledky voleb</div>
-      <div class="desc">Oficiální stránka — uvidíš, jak skutečné volby dopadly.</div>
-      <div class="url">volby.cz</div>
-    </a>
   </div>
 </section>
 
