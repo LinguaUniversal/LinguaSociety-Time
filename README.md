@@ -5,7 +5,7 @@ Propojuje dějepis a občanskou nauku. Sesterský projekt k **LinguaScience**.
 
 **Web:** https://linguauniversal.github.io/LinguaSociety-Time/
 
-## Hotové kapitoly (6/7)
+## Hotové kapitoly (7/7) — kompletní
 
 1. **Já jako občan** — pravidla, vnitřní předpis a zákon, nadřazenost (Ústava → zákon → vyhláška), tři moci, instituce, volby, symboly státu, školní parlament
 2. **Jak poznáváme minulost** — čtyři typy pramenů, epochy a milníky, letopočty a století
@@ -13,10 +13,7 @@ Propojuje dějepis a občanskou nauku. Sesterský projekt k **LinguaScience**.
 4. **Mezopotámie** — staroorientální státy, Sumerové a klínové písmo, Chammurapiho zákoník
 5. **Egypt** — Nil, faraoni a bohové, pyramidy a mumie, hieroglyfy, hra senet
 6. **Řecko** — minojská a mykénská civilizace, polis a demokracie, báje a bohové, Alexandr Veliký
-
-## Připravujeme
-
-7. Sedm pahorků: Řím
+7. **Řím** — pověsti o založení, republika a císařství, punské války, Caesar, gladiátoři, zánik Říma → středověk
 
 ## Jak nahrát na web (GitHub Pages)
 
