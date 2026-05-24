@@ -95,6 +95,12 @@ p strong{color:var(--ink)}
 .wonders li{font-size:14px;padding:9px 12px;background:var(--white);border:1px solid var(--line);border-radius:10px}
 .wonders li b{color:var(--c1)}
 
+/* společenská pyramida */
+.socpyr{display:flex;flex-direction:column;align-items:center;gap:6px;margin:16px 0}
+.socpyr .row{background:var(--c1-soft);border:1.5px solid var(--c1);color:var(--ink);text-align:center;padding:9px 14px;border-radius:10px;font-family:var(--disp);font-weight:700;font-size:15px;line-height:1.18}
+.socpyr .row small{display:block;font-family:var(--body);font-weight:400;font-size:12px;color:var(--ink-soft);margin-top:1px}
+.socpyr .row.top{border-width:3px;color:var(--c1)}
+
 /* časová přímka pravěku */
 .scale{display:flex;gap:0;overflow-x:auto;padding:8px 0 14px;margin:18px 0}
 .scale-step{flex:0 0 auto;min-width:124px;position:relative;padding:26px 10px 0;text-align:center}
@@ -290,8 +296,17 @@ footer a{color:var(--amber);text-decoration:none}
   <p>Bratři <strong>Gracchové</strong> chtěli rozdělit část půdy zpět rolníkům — oba za to byli zabiti. Změnila se i armáda: místo rolníků v ní teď sloužili <strong>vojáci za žold</strong>, kteří byli věrní hlavně svému veliteli. A to byla pro republiku nebezpečná změna.</p>
   <div class="callout">
     <div class="label">Otroci a gladiátoři</div>
-    <p style="margin:0 0 6px">S otroky se zacházelo jako s „mluvícím nářadím". Pro zábavu diváků spolu v arénách bojovali na život a na smrt <strong>gladiátoři</strong> (z latinského <em>gladius</em> = meč). Největší arénou bylo římské <strong>Koloseum</strong>.</p>
+    <p style="margin:0 0 6px">Do Říma proudily z dobytých provincií statisíce <strong>otroků</strong> — většinou zajatců z válek. Pracovali na polích, v dolech, v domácnostech i na stavbách silnic a akvaduktů, neměli skoro <strong>žádná práva</strong> a zacházelo se s nimi jako s „mluvícím nářadím". Pro zábavu diváků spolu v arénách bojovali na život a na smrt <strong>gladiátoři</strong> (z latinského <em>gladius</em> = meč). Největší arénou bylo římské <strong>Koloseum</strong>.</p>
     <p style="margin:0">Gladiátor <strong>Spartakus</strong> uprchl z gladiátorské školy a vedl velké <strong>povstání otroků</strong> (73–71 př. n. l.). Vzdoroval římské armádě dva roky; po porážce nechali Římané pro výstrahu 6000 zajatců ukřižovat podél cesty.</p>
+  </div>
+
+  <h3>Společnost — od patricijů po otroky</h3>
+  <p>I římská společnost připomínala pyramidu. Nahoře stály urozené a bohaté rodiny, dole nejpočetnější a nejbezprávnější skupina — otroci.</p>
+  <div class="socpyr">
+    <div class="row top" style="width:48%">Patricijové<small>urozené a bohaté rodiny</small></div>
+    <div class="row" style="width:66%">Plebejové<small>svobodní občané — řemeslníci, rolníci</small></div>
+    <div class="row" style="width:84%">Propuštěnci<small>otroci, kteří získali svobodu</small></div>
+    <div class="row" style="width:100%">Otroci<small>bez práv — „mluvící nářadí"</small></div>
   </div>
 
   <h3>Caesar a triumviráty</h3>
@@ -306,11 +321,15 @@ footer a{color:var(--amber);text-decoration:none}
     <div class="cell l">Crassus</div>
     <div class="cell r">Lepidus</div>
   </div>
-  <p>Nejslavnější z nich byl <strong>Gaius Iulius Caesar</strong> — skvělý vojevůdce, který dobyl <strong>Galii</strong> (dnešní Francii). Po rychlém vítězství prý poslal do Říma jen tři slova: <em>„Veni, vidi, vici"</em> (Přišel jsem, viděl jsem, zvítězil jsem). Když se rozhodl vstoupit s vojskem do Itálie, měl prohlásit <em>„Alea iacta est"</em> (Kostky jsou vrženy). V Římě se pak stal <strong>samovládcem</strong>.</p>
-  <p>To se senátorům nelíbilo — báli se, že z Caesara bude nový král. Roku <strong>44 př. n. l.</strong> ho proto přímo v senátu <strong>ubodali</strong>. Podle pověsti mezi útočníky poznal i svého chráněnce Bruta a zvolal <em>„I ty, Brute?"</em> (latinsky <em>Et tu, Brute?</em>).</p>
+  <p>Nejslavnější z nich byl <strong>Gaius Iulius Caesar</strong> — skvělý vojevůdce, který dobyl <strong>Galii</strong> (dnešní Francii). Po rychlém vítězství prý poslal do Říma jen tři slova: <em>„Veni, vidi, vici"</em> (Přišel jsem, viděl jsem, zvítězil jsem). Přivést vojsko do Itálie ale bylo zakázané — znamenalo to <strong>válku</strong> proti senátu a jeho spojenci Pompeiovi. Když Caesar se svými vojáky překročil hraniční řeku <strong>Rubikon</strong>, rozpoutal tím <strong>občanskou válku</strong> (Římané proti Římanům). Prý při tom prohlásil <em>„Alea iacta est"</em> — <strong>„Kostky jsou vrženy"</strong>. To úsloví se používá dodnes a znamená: <strong>rozhodnutí padlo a není už cesty zpět</strong>. Caesar válku vyhrál a v Římě se pak stal <strong>samovládcem (diktátorem)</strong>.</p>
+  <p>To se mnoha Římanům nelíbilo — báli se, že z Caesara bude nový král. Vadil jim i jeho vztah s egyptskou královnou <strong>Kleopatrou</strong>, se kterou měl syna. Roku <strong>44 př. n. l.</strong> ho proto přímo v senátu <strong>ubodali</strong>. Podle pověsti mezi útočníky poznal i svého chráněnce Bruta a zvolal <em>„I ty, Brute?"</em> (latinsky <em>Et tu, Brute?</em>).</p>
+  <div class="callout">
+    <div class="label">Odkud je slovo „císař"</div>
+    <p style="margin:0">Sám Caesar ještě císařem nebyl — vládl jako diktátor. Jeho jméno se ale stalo titulem: z <em>Caesar</em> vzniklo české <strong>císař</strong>, německé <em>Kaiser</em> i ruské <em>car</em>.</p>
+  </div>
 
   <h3>Císařství</h3>
-  <p>Po Caesarově smrti se o moc utkali členové druhého triumvirátu. <strong>Marcus Antonius</strong> se spojil s egyptskou královnou <strong>Kleopatrou</strong> (poslední vládkyní z minulé kapitoly!), ale <strong>Octavianus</strong> je oba porazil. Stal se tak jediným pánem Říma, přijal jméno <strong>Augustus</strong> a roku <strong>27 př. n. l.</strong> se stal prvním <strong>císařem</strong>. Tím skončila republika a začalo <strong>císařství</strong>.</p>
+  <p>Po Caesarově smrti se o moc utkali členové druhého triumvirátu. Chvíli vládli společně, ale pak se <strong>Marcus Antonius</strong> spojil s egyptskou královnou <strong>Kleopatrou</strong> (poslední vládkyní z minulé kapitoly!), která přes něj chtěla uplatnit svůj vliv. <strong>Octavianus</strong> — Caesarův adoptivní syn a dědic — je oba porazil v námořní <strong>bitvě u Actia</strong> (31 př. n. l.). Stal se tak jediným pánem Říma, přijal jméno <strong>Augustus</strong> a roku <strong>27 př. n. l.</strong> se stal prvním <strong>císařem</strong>. Tím skončila republika a začalo <strong>císařství</strong>.</p>
   <p>Řím vzkvétal: měl přes <strong>milion obyvatel</strong>, dlážděné silnice, <strong>akvadukty</strong>, lázně i Koloseum. Po celé říši se mluvilo <strong>latinsky</strong>.</p>
   <div class="callout">
     <div class="label">Když má moc jeden</div>
@@ -334,6 +353,14 @@ footer a{color:var(--amber);text-decoration:none}
     <div class="cell r">Venuše</div>
     <div class="cell l">Arés — válka</div>
     <div class="cell r">Mars</div>
+  </div>
+
+  <h3>Příchod křesťanství</h3>
+  <p>V době císařství se v říši začalo šířit nové náboženství — <strong>křesťanství</strong>. Vzniklo na východě říše a hlásalo, že všichni lidé jsou si před Bohem <strong>rovni</strong> a že za <strong>pokoru a trpělivost</strong> v pozemském životě čeká věřící <strong>odměna v nebi</strong>. Právě proto našlo oporu hlavně mezi <strong>chudými a otroky</strong>.</p>
+  <p>Císaři křesťany zpočátku <strong>pronásledovali</strong> — odmítali totiž uctívat císaře i římské bohy. Křesťanů ale stále přibývalo. Císař <strong>Konstantin</strong> je jako první přestal pronásledovat a křesťanství <strong>povolil</strong> (roku 313 n. l.). O několik desetiletí později se za císaře <strong>Theodosia</strong> stalo křesťanství dokonce <strong>státním náboženstvím</strong> celé říše.</p>
+  <div class="callout">
+    <div class="label">Zamysli se</div>
+    <p style="margin:0">Proč mohla taková víra vyhovovat i vládcům? Náboženství, které učí <strong>pokoře a trpělivosti</strong> a slibuje odměnu až v nebi, může lidi vést k tomu, že snáze <strong>přijmou svůj těžký úděl</strong> na zemi. Co myslíš — pomáhalo to spíš obyčejným lidem, nebo i mocným udržet pořádek?</p>
   </div>
 
   <h3>Proč Řím zanikl</h3>
